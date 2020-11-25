@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.xcschoolserver.mapper.adminUserMapper">
+    <select id="selectAdminUser" resultType="com.example.xcschoolserver.pojo.AdminUser">
+        select * from admin_user where admin_user_name = #{adminUserName} and admin_password = #{adminPassword};
+    </select>
+
+    <update id="updataToken" parameterType="com.example.xcschoolserver.pojo.AdminUser">
+        update admin_user set admin_token = #{token} where admin_user_name = #{adminUserName};
+    </update>
+
+    <update id="updataPwd" parameterType="com.example.xcschoolserver.pojo.AdminUser">
+        update admin_user set admin_password = #{adminPassword} where admin_user_name = #{adminUserName};
+    </update>
+
+    <select id="selectToken" resultType="com.example.xcschoolserver.pojo.AdminUser">
+        select * from admin_user where admin_token = #{token};
+    </select>
+</mapper>

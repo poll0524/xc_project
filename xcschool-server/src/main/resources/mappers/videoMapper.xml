@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.xcschoolserver.mapper.videoMapper">
+    <!--    写入一条视频-->
+    <insert id="insertVideo" parameterType="com.example.xcschoolserver.pojo.Video">
+        insert into billingvideo (media_id,video_name,cover_url,video_classify) values (#{mediaId},#{videoName},#{coverUrl},#{videoClassify})
+    </insert>
+
+    <insert id="insertVideos" parameterType="com.example.xcschoolserver.pojo.Video">
+        insert into billingvideo (video_name,cover_url,down_url,video_classify,quantity,digest,video_like,author,special,show_cover_pic,thumb_media_id,publish_time) values (#{videoName},#{coverUrl},#{downUrl},#{videoClassify},#{quantity},#{digest},#{videoLike},#{author},#{special},#{showCoverPic},#{thumbMediaId},#{time});
+    </insert>
+
+    <update id="updataVideos" parameterType="com.example.xcschoolserver.pojo.Video">
+        update billingvideo set video_name = #{videoName},cover_url = #{coverUrl},down_url = #{downUrl},video_classify = #{videoClassify},quantity = #{quantity},digest = #{digest},video_like = #{videoLike},author = #{author},show_cover_pic = #{showCoverPic},publish_time = #{time} where video_id = #{id};
+    </update>
+<!--    查询所有视频-->
+    <select id="selectVideo" resultType="com.example.xcschoolserver.pojo.Video">
+        select * from billingvideo;
+    </select>
+
+    <select id="selectVideos" resultType="com.example.xcschoolserver.pojo.Video">
+        select * from billingvideo where show_cover_pic = #{show_cover_pic};
+    </select>
+
+    <select id="selectVideoss" resultType="com.example.xcschoolserver.pojo.Video">
+        select * from billingvideo where video_classify = #{classifyId} and show_cover_pic = #{show_cover_pic};
+    </select>
+
+<!--    查询视频列表-->
+    <select id="selectVideoTiele" resultType="com.example.xcschoolserver.pojo.Video">
+        select video_id,video_name,cover_url,quantity from billingvideo where show_cover_pic = 1 ORDER BY video_id DESC limit #{pag},10;
+    </select>
+
+    <select id="selectVideoTieleAdmin" resultType="com.example.xcschoolserver.pojo.Video">
+        select video_id,video_name,cover_url,video_classify,publish_time from billingvideo where show_cover_pic = #{show_cover_pic} ORDER BY video_id DESC limit #{pag},10;
+    </select>
+
+    <select id="selectVideoTieleAdmins" resultType="com.example.xcschoolserver.pojo.Video">
+        select video_id,video_name,cover_url,video_classify,publish_time from billingvideo where show_cover_pic = #{show_cover_pic} and video_classify = #{classifyId} ORDER BY video_id DESC limit #{pag},10;
+    </select>
+
+
+    <update id="updataShowCoverPic" parameterType="com.example.xcschoolserver.pojo.Video">
+        update billingvideo set show_cover_pic = #{show_cover_pic} where video_id = #{id};
+    </update>
+
+    <select id="selectVideoId" resultType="com.example.xcschoolserver.pojo.Video">
+        select * from billingvideo where video_id = #{videoId};
+    </select>
+<!--    根据media_id更新视频-->
+    <update id="updataVideo" parameterType="com.example.xcschoolserver.pojo.Video">
+        update billingvideo set down_url = #{downUrl} where media_id = #{mediaId};
+    </update>
+
+    <update id="updataQuantity" parameterType="com.example.xcschoolserver.pojo.Video">
+        update billingvideo set quantity = quantity+1 where video_id = #{videoId};
+    </update>
+
+    <update id="updataLike" parameterType="com.example.xcschoolserver.pojo.Video">
+        update billingvideo set video_like = video_like+1 where video_id = #{videoId};
+    </update>
+
+    <update id="updataLikeNo" parameterType="com.example.xcschoolserver.pojo.Video">
+        update billingvideo set video_like = video_like-1 where video_id = #{videoId};
+    </update>
+
+
+
+    <select id="selectMediaIdVideo" resultType="com.example.xcschoolserver.pojo.Video">
+        select * from billingvideo where media_id = #{mediaId};
+    </select>
+
+    <select id="selectClaVideo" resultType="com.example.xcschoolserver.pojo.Video">
+        select * from billingvideo where video_classify = #{videoClassify} and show_cover_pic = 1 ORDER BY video_id DESC limit #{pag},10;
+    </select>
+
+    <select id="selectVideoTitleList" resultType="com.example.xcschoolserver.pojo.Video">
+        select video_id,video_name,cover_url,video_classify from billingvideo where show_cover_pic = 1 and video_name like #{title} limit #{pag},10;
+    </select>
+
+    <select id="selectVideoTitleListAdmin" resultType="com.example.xcschoolserver.pojo.Video">
+        select video_id,video_name,cover_url,video_classify,publish_time from billingvideo where show_cover_pic = #{show_cover_pic} and video_name like #{title} limit #{pag},10;
+    </select>
+
+    <select id="selectVideoTitleListAdmins" resultType="com.example.xcschoolserver.pojo.Video">
+        select video_id from billingvideo where show_cover_pic = #{show_cover_pic} and video_name like #{title};
+    </select>
+
+    <select id="selectRaVideo" resultType="com.example.xcschoolserver.pojo.Video">
+        SELECT video_id,video_name FROM billingvideo ORDER BY RAND() LIMIT 2;
+    </select>
+    <select id="selectRaClVideo" resultType="com.example.xcschoolserver.pojo.Video">
+        SELECT video_id,video_name FROM billingvideo where video_classify = #{videoClassify} ORDER BY RAND() LIMIT 2;
+    </select>
+
+    <select id="selectSpecialVideo" resultType="com.example.xcschoolserver.pojo.Video">
+        select video_id,video_name,cover_url,quantity from billingvideo where special = 1 limit #{pag},20;
+    </select>
+
+    <delete id="deleteVideo" parameterType="com.example.xcschoolserver.pojo.Video">
+        delete from billingvideo where video_id = #{id};
+    </delete>
+
+    <select id="selectVideoSum" resultType="com.example.xcschoolserver.pojo.Video">
+        select * from billingvideo;
+    </select>
+</mapper>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.xcschoolserver.mapper.brandNavMapper">
+    <!--    根据openId查询-->
+    <select id="selectBrand"  resultType="com.example.xcschoolserver.pojo.BrandNav">
+        select * from brand_nav where open_id = #{openId};
+    </select>
+
+    <select id="selectBrandUser"  resultType="com.example.xcschoolserver.pojo.BrandNav">
+        select * from brand_nav where open_id = #{openId} and brand_name is NOT null and brand_name != "孝粉云学堂";
+    </select>
+
+    <select id="selectBrandss"  resultType="com.example.xcschoolserver.pojo.BrandNav">
+        select * from brand_nav where open_id = #{openId} and brand_name is NOT null;
+    </select>
+
+    <select id="selectBrands"  resultType="com.example.xcschoolserver.pojo.BrandNav">
+        select * from brand_nav where brand_name != "孝粉云学堂" and open_id != #{openId};
+    </select>
+
+    <select id="selectBrandName"  resultType="com.example.xcschoolserver.pojo.BrandNav">
+        select * from brand_nav where open_id = #{openId} and brand_name = #{brandName};
+    </select>
+
+    <select id="selectBrandNames"  resultType="com.example.xcschoolserver.pojo.BrandNav">
+        select * from brand_nav where brand_name = #{brandName};
+    </select>
+<!--    插入我的品牌-->
+    <insert id="insertBrand" parameterType="com.example.xcschoolserver.pojo.BrandNav">
+            insert into brand_nav (open_id,brand_name,start) values (#{openId},#{brandName},#{show});
+    </insert>
+
+    <insert id="insertBrands" parameterType="com.example.xcschoolserver.pojo.BrandNav">
+            insert into brand_nav (open_id,brand_name,start,quantity) values (#{openId},#{brandName},#{show},#{quantity});
+    </insert>
+
+    <select id="selectBrandId" resultType="com.example.xcschoolserver.pojo.BrandNav">
+        select brand_id,open_id,brand_name,quantity from brand_nav where brand_id = #{brandId};
+    </select>
+
+<!--    更新我的品牌-->
+    <update id="updataBrand" parameterType="com.example.xcschoolserver.pojo.BrandNav">
+        update brand_nav set brand_name =#{brandName} where open_id = #{openId};
+    </update>
+
+    <update id="updataBrandShow" parameterType="com.example.xcschoolserver.pojo.BrandNav">
+        update brand_nav set start = #{start} where open_id = #{openId} and start = #{show};
+    </update>
+
+    <update id="updataBrandOne" parameterType="com.example.xcschoolserver.pojo.BrandNav">
+        update brand_nav set start = 1 where open_id = #{openId} limit 1;
+    </update>
+
+    <update id="updataBrandOnes" parameterType="com.example.xcschoolserver.pojo.BrandNav">
+        update brand_nav set start = 0 where open_id = #{openId};
+    </update>
+
+    <update id="updataBrandstart" parameterType="com.example.xcschoolserver.pojo.BrandNav">
+        update brand_nav set start = #{start} where open_id = #{openId} and brand_name = #{brandName};
+    </update>
+
+    <update id="updataTextInfo" parameterType="com.example.xcschoolserver.pojo.BrandNav">
+        update brand_nav set text_info = #{textInfo} where brand_id = #{brandId};
+    </update>
+
+    <delete id="deleteBrand" parameterType="com.example.xcschoolserver.pojo.BrandNav">
+        delete from brand_nav where open_id=#{openId} and brand_name = #{brandName};
+    </delete>
+
+    <delete id="deleteBrandId" parameterType="com.example.xcschoolserver.pojo.BrandNav">
+        delete from brand_nav where brand_id=#{brandId};
+    </delete>
+    <update id="updataBrandId" parameterType="com.example.xcschoolserver.pojo.BrandNav">
+        update brand_nav set brand_name = null ,start = null ,text_info = null ,quantity = quantity - 1 where brand_id = #{brandId};
+    </update>
+
+    <update id="updataBrandName" parameterType="com.example.xcschoolserver.pojo.BrandNav">
+        update brand_nav set brand_name = #{brandName}  , quantity = quantity - 1 where brand_id = #{brandId};
+    </update>
+
+    <update id="updataBrandInfo" parameterType="com.example.xcschoolserver.pojo.BrandNav">
+        update brand_nav set brand_name = #{brandName},start = #{start},brand_time = #{brandTime} where brand_id = #{brandId};
+    </update>
+    
+    <select id="selectBrandNav" resultType="com.example.xcschoolserver.pojo.BrandNav">
+        select * from brand_nav where brand_name != "孝粉云学堂";
+    </select>
+    <select id="selectTopTeacher" resultType="com.example.xcschoolserver.pojo.BrandNav">
+        select * from brand_nav where tell = 2;
+    </select>
+
+</mapper>

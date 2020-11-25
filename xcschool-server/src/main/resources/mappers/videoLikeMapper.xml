@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.xcschoolserver.mapper.videoLikeMapper">
+    <insert id="insertVideoLike" parameterType="com.example.xcschoolserver.pojo.VideoLike">
+        insert into video_like (open_id,video_id,brand_video_id,share_video_id,read_open_id) values (#{openId},#{videoId},#{brandVideoId},#{shareVideoId},#{readOpenId})
+    </insert>
+
+    <update id="updataVideoLike" parameterType="com.example.xcschoolserver.pojo.VideoLike">
+        update video_like set open_id = #{openId},video_id = #{videoId},brand_video_id = #{brandVideoId},share_video_id = #{shareVideoId} where like_id = #{likeId};
+    </update>
+
+    <select id="selectVideoLike" resultType="com.example.xcschoolserver.pojo.VideoLike">
+        select * from video_like where open_id = #{openId} and video_id = #{videoId};
+    </select>
+
+    <select id="selectVideoLikeVideoId" resultType="com.example.xcschoolserver.pojo.VideoLike">
+        select * from video_like where open_id = #{openId} and video_id = #{videoId};
+    </select>
+
+    <select id="selectVideoLikeBrandVideoId" resultType="com.example.xcschoolserver.pojo.VideoLike">
+        select * from video_like where open_id = #{openId} and brand_video_id = #{brandVideoId};
+    </select>
+
+    <delete id="deleteVideoLike" parameterType="com.example.xcschoolserver.pojo.VideoLike">
+        delete from video_like where like_id = #{likeId};
+    </delete>
+
+    <delete id="deleteVideoLikeVideoId" parameterType="com.example.xcschoolserver.pojo.VideoLike">
+        delete from video_like where open_id = #{openId} and video_id = #{videoId};
+    </delete>
+    <delete id="deletetVideoLikeBrandVideoId" parameterType="com.example.xcschoolserver.pojo.VideoLike">
+        delete from video_like where open_id = #{openId} and brand_video_id = #{brandVideoId};
+    </delete>
+
+    <delete id="deleteVideoLikeVideoIdRead" parameterType="com.example.xcschoolserver.pojo.VideoLike">
+        delete from video_like where open_id = #{openId} and video_id = #{videoId} and read_open_id = #{readOpenId};
+    </delete>
+    <delete id="deleteVideoLikeBrandVideoIdRead" parameterType="com.example.xcschoolserver.pojo.VideoLike">
+        delete from video_like where open_id = #{openId} and brand_video_id = #{brandVideoId} and read_open_id = #{readOpenId};
+    </delete>
+</mapper>

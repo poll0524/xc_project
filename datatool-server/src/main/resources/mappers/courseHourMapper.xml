@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.datatoolserver.mapper.courseHourMapper">
+    <select id="selectCourseId" resultType="com.example.datatoolserver.pojo.CourseHour">
+        select * from course_hour where course_id = #{courseId} order by hour_sort asc;
+    </select>
+
+    <update id="updataCourseHour" parameterType="com.example.datatoolserver.pojo.CourseHour">
+        update course_hour set hour_quantity = hour_quantity + 1 where hour_id = #{hourId};
+    </update>
+
+    <select id="selectCourse" resultType="com.example.datatoolserver.pojo.CourseHour">
+        select * from course_hour where hour_id = #{courseHourId};
+    </select>
+</mapper>

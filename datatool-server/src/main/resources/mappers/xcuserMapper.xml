@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.datatoolserver.mapper.xcuserMapper">
+    <!--    添加一条记录-->
+    <insert id="insertUser"  parameterType="com.example.datatoolserver.pojo.Xcuser">
+        insert into xcuser (open_id,user_name,user_sex,user_province,user_city,user_country,user_headimgurl,sign,start,user_balance,brand_quantity) values(#{openId},#{userName},#{userSex},#{userProvince},#{userCity},#{userCountry},#{userHeadimgurl},#{sign},#{start},#{userBalance},#{brandQuantity});
+    </insert>
+    <!--    根据电话查询-->
+    <select id="selectPhone" resultType="com.example.datatoolserver.pojo.Xcuser">
+        select * from xcuser where userphone = #{userphone};
+    </select>
+    <!--    <update id="updatatoken" parameterType="com.example.datatoolserver.pojo.Xcuser">-->
+    <!--        update xcuser set open_id = #{openId}, user_name = #{userName},user_sex = #{userSex},user_province = #{userProvince},user_city = #{userCity},user_country = #{userCountry},user_headimgurl = #{userHeadimgurl} where userphone = #{userphone}-->
+    <!--    </update>-->
+    <update id="updataXcuser" parameterType="com.example.datatoolserver.pojo.Xcuser">
+        update xcuser set sign = #{sign} where open_id = #{openId};
+    </update>
+
+    <select id="selectxcuser" resultType="com.example.datatoolserver.pojo.Xcuser">
+        select * from xcuser;
+    </select>
+
+    <select id="selectxcusers" resultType="com.example.datatoolserver.pojo.Xcuser">
+        select * from xcuser limit #{pag},20;
+    </select>
+    <select id="selectOpenIdName" resultType="com.example.datatoolserver.pojo.Xcuser">
+        select open_id,user_name,user_headimgurl from xcuser where open_id = #{openId};
+    </select>
+    <!--    根据openid查询-->
+    <select id="selectOpenId" resultType="com.example.datatoolserver.pojo.Xcuser">
+        select * from xcuser where open_id = #{openId};
+    </select>
+
+    <!--    根据openId更新电话号码-->
+    <update id="updataUserPhone" parameterType="com.example.datatoolserver.pojo.Xcuser">
+        update xcuser set user_phone = #{phone} where open_id = #{openId};
+    </update>
+
+    <update id="updataUserCodeurl" parameterType="com.example.datatoolserver.pojo.Xcuser">
+        update xcuser set code_url = #{codeUrl} where open_id = #{openId};
+    </update>
+    <update id="updataUserTikTok" parameterType="com.example.datatoolserver.pojo.Xcuser">
+        update xcuser set tiktok = #{codeUrl} where open_id = #{openId};
+    </update>
+    <update id="updataUserKuaiShou" parameterType="com.example.datatoolserver.pojo.Xcuser">
+        update xcuser set kuaishou = #{codeUrl} where open_id = #{openId};
+    </update>
+
+    <update id="updataUserStart" parameterType="com.example.datatoolserver.pojo.Xcuser">
+        update xcuser set start = #{start} where open_id = #{openId};
+    </update>
+
+    <update id="updataUserStarts" parameterType="com.example.datatoolserver.pojo.Xcuser">
+        update xcuser set start = #{start},begin_time = #{beginTime} ,end_time = #{endTime} where open_id = #{openId};
+    </update>
+
+    <!--    设置会员信息-->
+    <update id="updataUserVip" parameterType="com.example.datatoolserver.pojo.Xcuser">
+        update xcuser set begin_time = #{beginTime} ,end_time = #{endTime},vip_order_id = #{vipOrderId},start = #{start},brand_quantity = #{brandQuantity} where open_id = #{openId};
+    </update>
+
+    <update id="updataBrandQuantity" parameterType="com.example.datatoolserver.pojo.Xcuser">
+        update xcuser set brand_quantity = brand_quantity + 1 where open_id = #{openId};
+    </update>
+
+    <update id="updataUserVipTime" parameterType="com.example.datatoolserver.pojo.Xcuser">
+        update xcuser set end_time = #{endTime},vip_order_id = #{vipOrderId},start = #{start} where open_id = #{openId};
+    </update>
+    <!--    更新佣金余额-->
+    <update id="updataUserBalance" parameterType="com.example.datatoolserver.pojo.Xcuser">
+        update xcuser set user_balance = user_balance + #{userBalance} where open_id = #{openId};
+    </update>
+    <update id="updataBalance" parameterType="com.example.datatoolserver.pojo.Xcuser">
+        update xcuser set user_balance = #{userBalance} where open_id = #{openId};
+    </update>
+
+    <select id="selectNameLike" resultType="com.example.datatoolserver.pojo.Xcuser">
+        select * from xcuser where user_name like #{userName};
+    </select>
+
+    <select id="selectNameLikes" resultType="com.example.datatoolserver.pojo.Xcuser">
+        select * from xcuser where user_name like #{userName} limit #{pag},20;
+    </select>
+
+
+    <update id="updataUserSelfPortrait" parameterType="com.example.datatoolserver.pojo.Xcuser">
+        update xcuser set self_portrait = #{selfPortrait} where open_id = #{openId};
+    </update>
+
+    <update id="updataUserWeChat" parameterType="com.example.datatoolserver.pojo.Xcuser">
+        update xcuser set wechat = #{weChat} where open_id = #{openId};
+    </update>
+
+    <update id="updataUserEmail" parameterType="com.example.datatoolserver.pojo.Xcuser">
+        update xcuser set e_mail = #{email} where open_id = #{openId};
+    </update>
+    <update id="updataUserBusiness" parameterType="com.example.datatoolserver.pojo.Xcuser">
+        update xcuser set business = #{business} where open_id = #{openId};
+    </update>
+
+    <update id="updataUserPosition" parameterType="com.example.datatoolserver.pojo.Xcuser">
+        update xcuser set position = #{position} where open_id = #{openId};
+    </update>
+
+    <update id="updataUserprofession" parameterType="com.example.datatoolserver.pojo.Xcuser">
+        update xcuser set profession = #{profession} where open_id = #{openId};
+    </update>
+
+    <update id="updataUserCompany" parameterType="com.example.datatoolserver.pojo.Xcuser">
+        update xcuser set company = #{company} where open_id = #{openId};
+    </update>
+
+
+
+    <update id="updataUserH5" parameterType="com.example.datatoolserver.pojo.Xcuser">
+        update xcuser set company = #{company},wechat = #{weChat},e_mail = #{email},user_phone = #{phone},h5 = #{h5},h5_name = #{h5Name} where open_id = #{openId};
+    </update>
+
+    <update id="updataUser" parameterType="com.example.datatoolserver.pojo.Xcuser">
+        update xcuser set user_name = #{userName},user_phone = #{userPhone},user_sex = #{userSex},user_province = #{userProvince},user_city = #{userCity},user_country = #{userCountry},user_headimgurl = #{userHeadimgUrl},code_url = #{codeUrl},start = #{start},begin_time = #{beginTime},end_time = #{endTime},vip_order_id = #{vipOrderId},brand_quantity = #{brandQuantity},e_mail = #{email},wechat = #{wechat},self_portrait = #{selfPortrait},company = #{company} where open_id = #{openId};
+    </update>
+
+    <select id="updataUserInfo" parameterType="com.example.datatoolserver.pojo.Xcuser">
+        update xcuser set user_name = #{userName},user_sex = #{userSex},user_headimgurl = #{userHeadimgUrl} where open_id = #{openId};
+    </select>
+</mapper>

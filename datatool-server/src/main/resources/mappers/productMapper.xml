@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.datatoolserver.mapper.productMapper">
+    <insert id="insertProduct" parameterType="com.example.datatoolserver.pojo.Product">
+        insert into product (open_id,brand_id,product_title,product_describe,url,price,start,describe_img,vip_price) values (#{openId},#{brandId},#{productTitle},#{productDescribe},#{url},#{price},#{start},#{describeImg},#{VipPrice});
+    </insert>
+
+    <update id="updataProduct" parameterType="com.example.datatoolserver.pojo.Product">
+        update product set product_title = #{productTitle},product_describe = #{productDescribe},url = #{url},price = #{price},start = #{start},describe_img = #{describeImg},vip_price = #{VipPrice} where product_id = #{productId};
+    </update>
+
+    <delete id="deleteProduct" parameterType="com.example.datatoolserver.pojo.Product">
+        delete from product where product_id = #{productId};
+    </delete>
+
+    <select id="selectProductList" resultType="com.example.datatoolserver.pojo.Product">
+        select product_id,product_title,price,vip_price,start from product where open_id = #{openId} and brand_id = #{brandId} and start = #{start} limit #{pag},10;
+    </select>
+    <select id="selectProductInfo" resultType="com.example.datatoolserver.pojo.Product">
+        select * from product where product_id = #{productId};
+    </select>
+    <select id="selectProductId" resultType="com.example.datatoolserver.pojo.Product">
+        select product_id from product where open_id = #{openId} and brand_id = #{brandId} and product_title = #{productTitle} and product_describe = #{productDescribe} and url = #{url} and price = #{price} and start = #{start};
+    </select>
+</mapper>

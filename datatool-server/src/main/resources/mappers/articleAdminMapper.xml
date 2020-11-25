@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.datatoolserver.mapper.articleAdminMapper">
+    <insert id="insertArticle" parameterType="com.example.datatoolserver.pojo.ArticleAdmin">
+        insert into billingarticle_admin (title,thumb_media_id,author,digest,content,cover_img,article_classify,special,quantity) values (#{title},#{thumbMediaId},#{author},#{digest},#{content},#{coverImg},#{articleClassify},#{special},#{quantity});
+    </insert>
+</mapper>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.xcschoolserver.mapper.shineUponMapper">
+    <insert id="insertShine" parameterType="com.example.xcschoolserver.pojo.ShineUpon">
+        insert into shine_upon (open_id,read_open_id) values (#{openId},#{readOpenId})
+    </insert>
+
+    <select id="selectOpenId" resultType="com.example.xcschoolserver.pojo.ShineUpon">
+        select * from shine_upon where open_id = #{openId};
+    </select>
+
+    <select id="selectReadOpenId" resultType="com.example.xcschoolserver.pojo.ShineUpon">
+        select * from shine_upon where read_open_id = #{readOpenId};
+    </select>
+
+    <select id="selectShine" resultType="com.example.xcschoolserver.pojo.ShineUpon">
+        select * from shine_upon where open_id = #{openId} and read_open_id = #{readOpenId};
+    </select>
+    <update id="updataShine" parameterType="com.example.xcschoolserver.pojo.ShineUpon">
+        update shine_upon set open_id = #{openId} and read_open_id = #{readOpenId} where shine_id = #{shineId};
+    </update>
+</mapper>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.datatoolserver.mapper.courseRecordMapper">
+    <insert id="insertcourseRecord" parameterType="com.example.datatoolserver.pojo.CourseRecord">
+        insert into course_record (open_id,course_id,start,record,tell) values (#{openId},#{courseId},#{start},#{record},#{tell});
+    </insert>
+    <select id="selectCourseRecord" resultType="com.example.datatoolserver.pojo.CourseRecord">
+        select * from course_record where open_id = #{openId} and course_id = #{courseId} and start = #{start} and tell = #{tell};
+    </select>
+    <update id="updatacourseRecord" parameterType="com.example.datatoolserver.pojo.CourseRecord">
+        update course_record set record = #{record} where open_id = #{openId} and course_id = #{courseId} and start = #{start};
+    </update>
+    <select id="selectRecordOpenId" resultType="com.example.datatoolserver.pojo.CourseRecord">
+        select * from course_record where open_id = #{openId} order by course_id desc limit #{pag},10;
+    </select>
+</mapper>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.xcschoolserver.mapper.courseCollectMapper">
+    <insert id="insertCourseCollect" parameterType="com.example.xcschoolserver.pojo.CourseCollect">
+        insert into course_collect (open_id,course_id,start,tell) values (#{openId},#{courseId},#{start},#{tell});
+    </insert>
+
+    <select id="selectCourseCollectList" resultType="com.example.xcschoolserver.pojo.CourseCollect">
+        select * from course_collect where open_id = #{openId} order by course_id desc limit #{pag},10;
+    </select>
+
+    <select id="selectCollect" resultType="com.example.xcschoolserver.pojo.CourseCollect">
+        select * from course_collect where open_id = #{openId} and course_id = #{courseId} and start = #{start} and tell = #{tell};
+    </select>
+
+    <delete id="deleteCollect" parameterType="com.example.xcschoolserver.pojo.CourseCollect">
+        delete from course_collect where collect_id = #{collectId};
+    </delete>
+</mapper>

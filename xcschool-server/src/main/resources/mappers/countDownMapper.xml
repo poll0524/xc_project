@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.xcschoolserver.mapper.countDownMapper">
+    <select id="selectCountDown" resultType="com.example.xcschoolserver.pojo.CountDown">
+        select * from count_down where open_id = #{openId};
+    </select>
+    <insert id="insertCountDown" parameterType="com.example.xcschoolserver.pojo.CountDown">
+        insert into count_down (open_id,begin_time,end_time) values (#{openId},#{beginTime},#{endTime});
+    </insert>
+</mapper>

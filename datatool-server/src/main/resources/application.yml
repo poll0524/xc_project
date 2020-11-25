@@ -1,0 +1,26 @@
+server:
+  port: 9001
+
+spring:
+  datasource:
+    name: xcbilling
+    url: jdbc:mysql://localhost:3306/xcbilling?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=false
+    #    url: jdbc:mysql://localhost:3306/xcbilling?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=TRUE
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  application:
+    name: datatool
+
+
+
+mybatis:
+  #实体类所做包
+  type-aliases-package: learning.pojo
+  #mapper.xml所在位置
+  mapper-locations: classpath:mappers/*.xml
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

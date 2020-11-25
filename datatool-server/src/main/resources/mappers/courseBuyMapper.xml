@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.datatoolserver.mapper.courseBuyMapper">
+    <insert id="insertCourseBuy" parameterType="com.example.datatoolserver.pojo.CourseBuy">
+        insert into course_buy (open_id,course_id,course_hour_id,price,buy_time,start,tell) values (#{openId},#{courseId},#{courseHourId},#{price},#{buyTime},#{start},#{tell})
+    </insert>
+
+    <select id="selectCourseBuy" resultType="com.example.datatoolserver.pojo.CourseBuy">
+        select * from course_buy where open_id = #{openId} and course_id = #{courseId} and start = #{start};
+    </select>
+
+    <select id="selectCourseBuys" resultType="com.example.datatoolserver.pojo.CourseBuy">
+        select * from course_buy where open_id = #{openId} and course_id = #{courseId} and course_hour_id = #{courseHourId} and start = #{start} and tell = #{tell};
+    </select>
+
+    <select id="selectBuyOpenId" resultType="com.example.datatoolserver.pojo.CourseBuy">
+        select * from course_buy where open_id = #{openId} order by course_id desc limit #{pag},10;
+    </select>
+</mapper>

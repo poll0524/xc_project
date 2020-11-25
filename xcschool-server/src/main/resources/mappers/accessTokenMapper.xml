@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.xcschoolserver.mapper.accessTokenMapper">
+    <!--    根据名称查询 -->
+    <select id="selectNameAccessToken"  resultType="com.example.xcschoolserver.pojo.AccessToken">
+        select * from access_token where token_name = #{tokenName};
+    </select>
+    
+<!--    根据名称写入-->
+    <update id="updataNameAccessToken" parameterType="com.example.xcschoolserver.pojo.AccessToken">
+        update access_token set token_info = #{tokenInfo} , token_time = #{tokenTime} where token_name = #{tokenName};
+    </update>
+</mapper>

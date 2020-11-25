@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.xcschoolserver.mapper.popImageMapper">
+    <insert id="insertPopimg" parameterType="com.example.xcschoolserver.pojo.PopImage">
+        insert into pop_image (open_id,image_url) values (#{openId},#{imageUrl});
+    </insert>
+
+    <select id="selectPop" resultType="com.example.xcschoolserver.pojo.PopImage">
+        select * from pop_image where open_id = #{openId};
+    </select>
+
+    <delete id="deletePop" parameterType="com.example.xcschoolserver.pojo.PopImage">
+        delete from pop_image where pop_id = #{popId};
+    </delete>
+
+    <select id="selectPopId" resultType="com.example.xcschoolserver.pojo.PopImage">
+        select * from pop_image where pop_id = #{popId};
+    </select>
+</mapper>

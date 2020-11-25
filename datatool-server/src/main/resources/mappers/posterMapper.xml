@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.datatoolserver.mapper.posterMapper">
+    <select id="selectPoster" resultType="com.example.datatoolserver.pojo.Poster">
+        select poster_url,poster_title from poster limit #{pag},20;
+    </select>
+
+    <select id="selectPosterClassify" resultType="com.example.datatoolserver.pojo.Poster">
+        select poster_url,poster_title from poster where poster_classify = #{posterClassify} limit #{pag},20;
+    </select>
+</mapper>

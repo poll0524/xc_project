@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.xcschoolserver.mapper.cashMapper">
+    <select id="selectCash" resultType="com.example.xcschoolserver.pojo.Cash">
+        select * from cash where open_id = #{openId} and start = #{start} order by cash_id desc;
+    </select>
+
+    <select id="selectOrderId" resultType="com.example.xcschoolserver.pojo.Cash">
+        select * from cash where order_id = #{orderId};
+    </select>
+    <select id="selectOrderIds" resultType="com.example.xcschoolserver.pojo.Cash">
+        select * from cash where cash_id = #{id};
+    </select>
+
+    <select id="selectCashOpenId" resultType="com.example.xcschoolserver.pojo.Cash">
+        select * from cash where open_id = #{openId};
+    </select>
+    <insert id="insertCash" parameterType="com.example.xcschoolserver.pojo.Cash">
+        insert into cash (order_id,open_id,cash_name,cash_quantity,cash_time,start) values (#{orderId},#{openId},#{cashName},#{cashQuantity},#{cashTime},#{start})
+    </insert>
+
+    <update id="updataOrderId" parameterType="com.example.xcschoolserver.pojo.Cash">
+        update cash set start = 1 where order_id = #{orderId};
+    </update>
+    <select id="selectCashAdmin" resultType="com.example.xcschoolserver.pojo.Cash">
+        select * from cash where start = #{start} limit #{pag},10;
+    </select>
+    <select id="selectCashAdmins" resultType="com.example.xcschoolserver.pojo.Cash">
+        select * from cash where start = #{start};
+    </select>
+
+    <select id="selectCashAdminNo" resultType="com.example.xcschoolserver.pojo.Cash">
+        select * from cash where start != #{start} limit #{pag},10;
+    </select>
+
+    <select id="selectCashAdminNos" resultType="com.example.xcschoolserver.pojo.Cash">
+        select * from cash where start != #{start};
+    </select>
+
+    <select id="selectCashAdminTimeName" resultType="com.example.xcschoolserver.pojo.Cash">
+        select * from cash where open_id in
+        <foreach collection="openId" index="index" item = "item" open="(" separator="," close=")">
+            #{item}
+        </foreach> and start = #{start} and cash_time like #{time} limit #{pag},10;
+    </select>
+
+    <select id="selectCashAdminTimeNames" resultType="com.example.xcschoolserver.pojo.Cash">
+        select * from cash where open_id in
+        <foreach collection="openId" index="index" item = "item" open="(" separator="," close=")">
+            #{item}
+        </foreach> and start = #{start} and cash_time like #{time};
+    </select>
+
+    <select id="selectCashAdminTimeNameNo" resultType="com.example.xcschoolserver.pojo.Cash">
+        select * from cash where open_id in
+        <foreach collection="openId" index="index" item = "item" open="(" separator="," close=")">
+            #{item}
+        </foreach> and start != #{start} and cash_time like #{time} limit #{pag},10;
+    </select>
+
+    <select id="selectCashAdminTimeNameNos" resultType="com.example.xcschoolserver.pojo.Cash">
+        select cash_id from cash where open_id in
+        <foreach collection="openId" index="index" item = "item" open="(" separator="," close=")">
+            #{item}
+        </foreach> and start != #{start} and cash_time like #{time};
+    </select>
+
+    <select id="selectCashAdminTime" resultType="com.example.xcschoolserver.pojo.Cash">
+        select * from cash where start = #{start} and cash_time like #{time} limit #{pag},10;
+    </select>
+
+    <select id="selectCashAdminTimes" resultType="com.example.xcschoolserver.pojo.Cash">
+        select * from cash where start = #{start} and cash_time like #{time};
+    </select>
+
+    <select id="selectCashAdminTimeNo" resultType="com.example.xcschoolserver.pojo.Cash">
+        select * from cash where start != #{start} and cash_time like #{time} limit #{pag},10;
+    </select>
+
+    <select id="selectCashAdminTimeNos" resultType="com.example.xcschoolserver.pojo.Cash">
+        select * from cash where start != #{start} and cash_time like #{time};
+    </select>
+
+
+    <select id="selectCashOpenIdA" resultType="com.example.xcschoolserver.pojo.Cash">
+        select * from cash where open_id in
+        <foreach collection="openId" index="index" item = "item" open="(" separator="," close=")">
+            #{item}
+        </foreach> and start = #{start} limit #{pag},10;
+    </select>
+
+    <select id="selectCashOpenIdAs" resultType="com.example.xcschoolserver.pojo.Cash">
+        select cash_id from cash where open_id in
+        <foreach collection="openId" index="index" item = "item" open="(" separator="," close=")">
+            #{item}
+        </foreach> and start = #{start};
+    </select>
+
+
+
+
+
+    <select id="selectCashOpenIdNo" resultType="com.example.xcschoolserver.pojo.Cash">
+        select * from cash where start != #{start} open_id in
+        <foreach collection="openId" index="index" item = "item" open="(" separator="," close=")">
+            #{item}
+        </foreach> limit #{pag},10;
+    </select>
+
+    <select id="selectCashOpenIdNos" resultType="com.example.xcschoolserver.pojo.Cash">
+        select cash_id from cash where start != #{start} open_id in
+        <foreach collection="openId" index="index" item = "item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+
+    <update id="updataCash" parameterType="com.example.xcschoolserver.pojo.Cash">
+        update cash set start = #{start},reason = #{reason},dispose_time = #{disposeTime} where cash_id = #{cashId};
+    </update>
+</mapper>

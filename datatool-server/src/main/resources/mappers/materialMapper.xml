@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.datatoolserver.mapper.materialMapper">
+    <insert id="insertMaterial" parameterType="com.example.datatoolserver.pojo.Material">
+        insert into material (article_id,video_id,product_id) values (#{articleId},#{videoId},#{productId});
+    </insert>
+    <delete id="deleteMaterialArticle" parameterType="com.example.datatoolserver.pojo.Material">
+        delete from material where article_id = #{articleId};
+    </delete>
+    <delete id="deleteMaterialVideo" parameterType="com.example.datatoolserver.pojo.Material">
+        delete from material where video_id = #{videoId};
+    </delete>
+
+    <select id="selectMaterialArticle" resultType="com.example.datatoolserver.pojo.Material">
+        select product_id from material where article_id = #{articleId};
+    </select>
+
+    <select id="selectMaterialVideo" resultType="com.example.datatoolserver.pojo.Material">
+        select product_id from material where video_id = #{videoId};
+    </select>
+
+</mapper>

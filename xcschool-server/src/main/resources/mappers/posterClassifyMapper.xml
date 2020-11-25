@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.xcschoolserver.mapper.posterClassifyMapper">
+    <select id="selectPosterClassify" resultType="com.example.xcschoolserver.pojo.PosterClassify">
+        select * from poster_classify where tell = 0;
+    </select>
+
+    <select id="selectSharePoster" resultType="com.example.xcschoolserver.pojo.PosterClassify">
+        select * from poster_classify where tell = 1;
+    </select>
+</mapper>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.xcschoolserver.mapper.userBrandMapper">
+    <delete id="deleteUserBrand" parameterType="com.example.xcschoolserver.pojo.UserBrand">
+        delete from user_brand where open_id = #{openId};
+    </delete>
+
+    <insert id="insertUserBrand" parameterType="com.example.xcschoolserver.pojo.UserBrand">
+        insert into user_brand (open_id,brand_id) values (#{openId},#{brandId});
+    </insert>
+    <select id="selectUserBrand" resultType="com.example.xcschoolserver.pojo.UserBrand">
+        select * from user_brand where open_id = #{openId} and brand_id = #{brandId};
+    </select>
+    <select id="selectUserBrands" resultType="com.example.xcschoolserver.pojo.UserBrand">
+        select * from user_brand where open_id = #{openId};
+    </select>
+</mapper>

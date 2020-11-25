@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.datatoolserver.mapper.videoAdminMapper">
+    <insert id="insertVideo" parameterType="com.example.datatoolserver.pojo.VideoAdmin">
+        insert into billingvideo_admin (video_name,cover_url,down_url,video_classify,quantity,digest,video_like,author,special) values (#{videoName},#{coverUrl},#{downUrl},#{videoClassify},#{quantity},#{digest},#{videoLike},#{author},#{special});
+    </insert>
+</mapper>

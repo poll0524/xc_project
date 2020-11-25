@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.datatoolserver.mapper.brandVideoMapper">
+    <insert id="insertVideo" parameterType="com.example.datatoolserver.pojo.BrandVideo">
+        insert into brand_video (open_id,title,digest,cover_img,quantity,brand_id,video_like,token,author,classify,video_time,down_url,pop_img,pop_code) values (#{openId},#{title},#{digest},#{coverImg},#{quantity},#{brandId},#{videoLike},#{token},#{author},#{classify},#{videoTime},#{downUrl},#{popImg},#{popCode});
+    </insert>
+
+    <update id="updataBrandVideoInfo" parameterType="com.example.datatoolserver.pojo.BrandVideo">
+        update brand_video set title = #{title},digest = #{digest},quantity = #{quantity},brand_id = #{brandId},video_like = #{videoLike},author = #{author},classify = #{classify},pop_img = #{popImg},pop_code = #{popCode} where video_id = #{videoId};
+    </update>
+
+    <update id="updataBrandVideoInfos" parameterType="com.example.datatoolserver.pojo.BrandVideo">
+        update brand_video set open_id = #{openId} , title = #{title},digest = #{digest},quantity = #{quantity},brand_id = #{brandId},video_like = #{videoLike},author = #{author},classify = #{classify},pop_img = #{popImg},pop_code = #{popCode},down_url = #{downUrl} where video_id = #{videoId};
+    </update>
+
+    <select id="selectVideoId" resultType="com.example.datatoolserver.pojo.BrandVideo">
+        select video_id from brand_video where token = #{token};
+    </select>
+
+    <select id="selectBrandName" resultType="com.example.datatoolserver.pojo.BrandVideo">
+        select video_id,title,cover_img,quantity,brand_id,author,video_time,classify from brand_video where author = #{brandName} and classify = #{classify} order by video_id desc limit #{pag},10;
+    </select>
+    <select id="selectBrandNam" resultType="com.example.datatoolserver.pojo.BrandVideo">
+        select video_id from brand_video where author = #{brandName} and classify = #{classify};
+    </select>
+
+    <select id="selectBrandNames" resultType="com.example.datatoolserver.pojo.BrandVideo">
+        select video_id,title,cover_img,quantity,brand_id,author,video_time,classify from brand_video where author = #{brandName}  order by video_id desc limit #{pag},10;
+    </select>
+
+    <select id="selectBrandNams" resultType="com.example.datatoolserver.pojo.BrandVideo">
+        select video_id from brand_video where author = #{brandName};
+    </select>
+
+    <select id="selectBrandNameOpenId" resultType="com.example.datatoolserver.pojo.BrandVideo">
+        select video_id,title,cover_img,quantity,brand_id,video_time,classify from brand_video where author = #{brandName} and classify = #{classify} and open_id = #{openId} order by video_id desc limit #{pag},10;
+    </select>
+
+    <select id="selectBrandNamesOpenId" resultType="com.example.datatoolserver.pojo.BrandVideo">
+        select video_id,title,cover_img,quantity,brand_id,video_time,classify from brand_video where author = #{brandName} and open_id = #{openId} order by video_id desc limit #{pag},10;
+    </select>
+
+    <select id="selectVideo" resultType="com.example.datatoolserver.pojo.BrandVideo">
+        select video_id,title,cover_img,quantity,brand_id,video_time from brand_video where open_id = #{openId} and brand_id = #{brandId} limit #{pag},10;
+    </select>
+
+    <update id="updataBrandVideo" parameterType="com.example.datatoolserver.pojo.BrandVideo">
+        update brand_video set brand_id = #{brandId} , author = #{author},classify = #{classify} where video_id = #{videoId};
+    </update>
+
+    <update id="updataLike" parameterType="com.example.datatoolserver.pojo.BrandVideo">
+        update brand_video set video_like = video_like+1 where video_id = #{videoId};
+    </update>
+
+    <update id="updataLikeNo" parameterType="com.example.datatoolserver.pojo.BrandVideo">
+        update brand_video set video_like = video_like-1 where video_id = #{videoId};
+    </update>
+
+    <select id="selectBrandVideoList" resultType="com.example.datatoolserver.pojo.BrandVideo">
+        select video_id,title,cover_img,brand_id from brand_video where title like #{title} limit #{pag},10;
+    </select>
+    <select id="selectVideoIds" resultType="com.example.datatoolserver.pojo.BrandVideo">
+        select * from brand_video where video_id = #{videoId};
+    </select>
+
+    <delete id="deleteBrandVideo" parameterType="com.example.datatoolserver.pojo.BrandVideo">
+        delete from brand_video where video_id = #{videoId};
+    </delete>
+
+    <delete id="deleteBrandId" parameterType="com.example.datatoolserver.pojo.BrandVideo">
+        delete from brand_video where brand_id = #{brandId};
+    </delete>
+
+    <update id="updataVideoClassify" parameterType="com.example.datatoolserver.pojo.BrandVideo">
+        update brand_video set classify = null where brand_id = #{brandId} and classify = #{classify};
+    </update>
+
+    <select id="selectBrandVideoSum" resultType="com.example.datatoolserver.pojo.BrandVideo">
+        select * from brand_video;
+    </select>
+
+    <select id="selectBrandVideoSums" resultType="com.example.datatoolserver.pojo.BrandVideo">
+        select * from brand_video order by video_id desc limit #{pag},10;
+    </select>
+
+    <select id="selectVideoTitleListAdmin" resultType="com.example.datatoolserver.pojo.BrandVideo">
+        select * from brand_video where title like #{title} limit #{pag},10;
+    </select>
+    <select id="selectVideoTitleListAdmins" resultType="com.example.datatoolserver.pojo.BrandVideo">
+        select video_id from brand_video where title like #{title};
+    </select>
+    <select id="selectBrandVideo" resultType="com.example.datatoolserver.pojo.BrandVideo">
+        select * from brand_video where open_id = #{openId} limit #{pag},10;
+    </select>
+    <select id="selectBrandVideoAdminSum" resultType="com.example.datatoolserver.pojo.BrandVideo">
+        select video_id from brand_video where open_id = #{openId};
+    </select>
+</mapper>

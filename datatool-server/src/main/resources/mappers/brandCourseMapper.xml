@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.datatoolserver.mapper.brandCourseMapper">
+    <select id="selectBrandName" resultType="com.example.datatoolserver.pojo.BrandCourse">
+        select course_id,title,cover_img,brand_id,quantity,classify,price,open_id,tell from brand_course where author = #{brandName} order by course_id desc limit #{pag},10;
+    </select>
+
+    <select id="selectClassify" resultType="com.example.datatoolserver.pojo.BrandCourse">
+        select course_id,title,cover_img,brand_id,quantity,classify,price from brand_course where author = #{brandName} and classify = #{classify} order by course_id desc limit #{pag},10;
+    </select>
+
+    <select id="selectOpenId" resultType="com.example.datatoolserver.pojo.BrandCourse">
+        select * from brand_course where open_id = #{openId} order by course_id desc limit #{pag},10;
+    </select>
+
+    <select id="selectBrandNames" resultType="com.example.datatoolserver.pojo.BrandCourse">
+        select course_id,title,cover_img,brand_id,quantity,classify,price from brand_course where author = #{brandName} and open_id = #{openId} order by course_id desc limit #{pag},10;
+    </select>
+
+    <select id="selectClassifys" resultType="com.example.datatoolserver.pojo.BrandCourse">
+        select course_id,title,cover_img,brand_id,quantity,classify,price from brand_course where author = #{brandName} and classify = #{classify} and open_id = #{openId}  order by course_id desc limit #{pag},10;
+    </select>
+
+    <update id="updataCourseClassify" parameterType="com.example.datatoolserver.pojo.BrandCourse">
+        update brand_course set classify = null where brand_id = #{brandId} and classify = #{classify};
+    </update>
+
+    <delete id="deleteBrandId" parameterType="com.example.datatoolserver.pojo.BrandCourse">
+        delete from brand_course where brand_id = #{brandId};
+    </delete>
+
+    <select id="selectCourseId" resultType="com.example.datatoolserver.pojo.BrandCourse">
+        select * from brand_course where course_id = #{courseId};
+    </select>
+
+    <update id="updataQuantity" parameterType="com.example.datatoolserver.pojo.BrandCourse">
+        update brand_course set quantity = quantity + 1 where course_id = #{courseId};
+    </update>
+
+    <update id="updataBrandName" parameterType="com.example.datatoolserver.pojo.BrandCourse">
+        update brand_course set brand_id = #{brandId},author = #{author},classify = #{classify} where course_id = #{courseId};
+    </update>
+
+    <select id="selectBrandCourseSum" resultType="com.example.datatoolserver.pojo.BrandCourse">
+        select * from brand_course;
+    </select>
+
+    <select id="selectBrandSum" resultType="com.example.datatoolserver.pojo.BrandCourse">
+        select course_id from brand_course where open_id = #{openId};
+    </select>
+
+</mapper>

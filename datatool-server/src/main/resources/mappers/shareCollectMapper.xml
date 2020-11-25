@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.datatoolserver.mapper.shareCollectMapper">
+    <select id="selectOpenId" resultType="com.example.datatoolserver.pojo.ShareCollect">
+        select * from share_collect where open_id = #{openId};
+    </select>
+    <update id="updataOpenId" parameterType="com.example.datatoolserver.pojo.ShareCollect">
+        update share_collect set material = #{material} , share = #{share} where open_id = #{openId};
+    </update>
+    <insert id="insertCollect" parameterType="com.example.datatoolserver.pojo.ShareCollect">
+        insert into share_collect (open_id,material,share) values (#{openId},#{material},#{share});
+    </insert>
+</mapper>

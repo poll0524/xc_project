@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.datatoolserver.mapper.shareUserMapper">
+    <!--    查询所有-->
+    <select id="selectShareUserList"  resultType="com.example.datatoolserver.pojo.ShareUser">
+        select * from share_user where open_id = #{openId};
+    </select>
+
+    <select id="selectShareArticle"  resultType="com.example.datatoolserver.pojo.ShareUser">
+        select * from share_user where open_id = #{openId} and article_id is not null ORDER BY read_time_begin DESC limit #{pag},20;
+    </select>
+
+    <select id="selectShareVideo"  resultType="com.example.datatoolserver.pojo.ShareUser">
+        select * from share_user where open_id = #{openId} and video_id is not null ORDER BY read_time_begin DESC limit #{pag},20;
+    </select>
+
+    <select id="selectShareCourse"  resultType="com.example.datatoolserver.pojo.ShareUser">
+        select * from share_user where open_id = #{openId} and course_id is not null ORDER BY read_time_begin DESC limit #{pag},20;
+    </select>
+
+    <select id="selectShareUserMed"  resultType="com.example.datatoolserver.pojo.ShareUser">
+        select * from share_user where open_id = #{openId} and read_open_id = #{readId} and media_id = #{mediaId};
+    </select>
+
+    <select id="selectShareUserMeds" resultType="com.example.datatoolserver.pojo.ShareUser">
+        select * from share_user where open_id = #{openId} and read_open_id = #{readId} and article_id = #{articleId} and tell = #{tell};
+    </select>
+
+    <select id="selectShareUserVid"  resultType="com.example.datatoolserver.pojo.ShareUser">
+        select * from share_user where open_id = #{openId} and read_open_id = #{readId} and video_id = #{videoId} and tell = #{tell};
+    </select>
+
+    <select id="selectShareUserCid"  resultType="com.example.datatoolserver.pojo.ShareUser">
+        select * from share_user where open_id = #{openId} and read_open_id = #{readId} and course_id = #{courseId} and tell = #{tell};
+    </select>
+
+    <select id="selectMediaId"  resultType="com.example.datatoolserver.pojo.ShareUser">
+        select * from share_user where open_id = #{openId} and article_id = #{articleId};
+    </select>
+
+    <select id="selectVideoId"  resultType="com.example.datatoolserver.pojo.ShareUser">
+        select * from share_user where open_id = #{openId} and video_id = #{videoId};
+    </select>
+
+
+
+
+    <update id="updataShareId" parameterType="com.example.datatoolserver.pojo.ShareUser">
+        update share_user set deg = #{deg} where share_id = #{shareId}
+    </update>
+
+
+    <select id="selectReadUserList"  resultType="com.example.datatoolserver.pojo.ShareUser">
+        select * from share_user where open_id = #{openId} and read_open_id = #{readId};
+    </select>
+    <select id="selectReadUser"  resultType="com.example.datatoolserver.pojo.ShareUser">
+        select * from share_user where open_id = #{openId} and read_open_id = #{readId} and start = #{start};
+    </select>
+
+    <insert id="insertShareUser" parameterType="com.example.datatoolserver.pojo.ShareUser">
+        insert into share_user (open_id,read_open_id,video_id,article_id,course_id,read_time_begin,start,deg,tell) values (#{openId},#{readOpenId},#{videoId},#{articleId},#{courseId},#{readTimeBegin},#{start},#{deg},#{tell});
+    </insert>
+
+    <select id="selectArticle" resultType="com.example.datatoolserver.pojo.ShareUser">
+        select * from share_user where open_id = #{openId} and article_id is not null;
+    </select>
+    <select id="selectVideo" resultType="com.example.datatoolserver.pojo.ShareUser">
+        select * from share_user where open_id = #{openId} and video_id is not null;
+    </select>
+    <select id="selectShareUser" resultType="com.example.datatoolserver.pojo.ShareUser">
+        select * from share_user;
+    </select>
+
+    <select id="selectShareId" resultType="com.example.datatoolserver.pojo.ShareUser">
+        select * from share_user where share_id = #{shareId};
+    </select>
+    <update id="updataEndTime" parameterType="com.example.datatoolserver.pojo.ShareUser">
+        update share_user set read_time = #{endTime} where share_id = #{shareId};
+    </update>
+
+    <select id="selectBrandArticle" resultType="com.example.datatoolserver.pojo.ShareUser">
+        select * from share_user where article_id = #{articleId} and tell = 1;
+    </select>
+    <select id="selectBrandVideo" resultType="com.example.datatoolserver.pojo.ShareUser">
+        select * from share_user where video_id = #{videoId} and tell = 1;
+    </select>
+    <select id="selectBrandCourse" resultType="com.example.datatoolserver.pojo.ShareUser">
+        select * from share_user where course_id = #{courseId} and tell = 1;
+    </select>
+</mapper>

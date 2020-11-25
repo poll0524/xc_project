@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.xcschoolserver.mapper.brandArticleMapper">
+    <insert id="insertBrandArticle" parameterType="com.example.xcschoolserver.pojo.BrandArticle">
+        insert into brand_article (open_id,title,digest,cover_img,url,quantity,brand_id,content,token,author,classify,publish_time) values (#{openId},#{title},#{digest},#{coverImg},#{url},#{quantity},#{brandId},#{content},#{token},#{author},#{classify},#{articleTime});
+    </insert>
+
+    <select id="selectBrandArticleId" resultType="com.example.xcschoolserver.pojo.BrandArticle">
+        select article_id from brand_article where token = #{token};
+    </select>
+    <select id="selectBrandArticle" resultType="com.example.xcschoolserver.pojo.BrandArticle">
+        select article_id,title,cover_img,digest,quantity,brand_id,publish_time from brand_article where open_id = #{openId} and brand_id = #{brandId} limit #{pag},10;
+    </select>
+
+    <update id="updataBrandName" parameterType="com.example.xcschoolserver.pojo.BrandArticle">
+        update brand_article set brand_id = #{brandId},author = #{author},classify = #{classify} where article_id = #{articleId};
+    </update>
+
+    <update id="updataBrandArticleInfo" parameterType="com.example.xcschoolserver.pojo.BrandArticle">
+        update brand_article set title = #{title},digest = #{digest},url = #{url},quantity = #{quantity},brand_id = #{brandId},content = #{content},author = #{author},classify = #{classify} where article_id = #{articleId};
+    </update>
+
+    <update id="updataBrandArticleInfos" parameterType="com.example.xcschoolserver.pojo.BrandArticle">
+        update brand_article set open_id = #{openId}, title = #{title},digest = #{digest},url = #{url},quantity = #{quantity},brand_id = #{brandId},content = #{content},author = #{author},classify = #{classify} where article_id = #{articleId};
+    </update>
+
+    <select id="selectBrandArticleList" resultType="com.example.xcschoolserver.pojo.BrandArticle">
+        select article_id,title,cover_img,brand_id from brand_article where title like #{title} limit #{pag},10;
+    </select>
+    <select id="selectArticleId" resultType="com.example.xcschoolserver.pojo.BrandArticle">
+        select * from brand_article where article_id = #{articleId};
+    </select>
+
+    <select id="selectArticleBrand" resultType="com.example.xcschoolserver.pojo.BrandArticle">
+        select article_id,title,cover_img,quantity,brand_id,author,classify,publish_time from brand_article where author = #{brandName} and classify = #{classify} order by article_id desc limit #{pag},10;
+    </select>
+
+    <select id="selectArticleBran" resultType="com.example.xcschoolserver.pojo.BrandArticle">
+        select article_id from brand_article where author = #{brandName} and classify = #{classify};
+    </select>
+
+    <select id="selectArticleBrandOpenId" resultType="com.example.xcschoolserver.pojo.BrandArticle">
+        select article_id,title,cover_img,quantity,brand_id,classify,publish_time from brand_article where author = #{brandName} and classify = #{classify} and open_id = #{openId} order by article_id desc limit #{pag},10;
+    </select>
+
+    <select id="selectArticleBrandsOpenId" resultType="com.example.xcschoolserver.pojo.BrandArticle">
+        select article_id,title,cover_img,quantity,brand_id,classify,publish_time from brand_article where open_id = #{openId} and author = #{brandName} order by article_id desc limit #{pag},10;
+    </select>
+
+    <select id="selectArticleBrands" resultType="com.example.xcschoolserver.pojo.BrandArticle">
+        select article_id,title,cover_img,quantity,brand_id,author,classify,publish_time from brand_article where author = #{brandName} order by article_id desc limit #{pag},10;
+    </select>
+
+    <select id="selectArticleBrans" resultType="com.example.xcschoolserver.pojo.BrandArticle">
+        select article_id from brand_article where author = #{brandName};
+    </select>
+
+    <delete id="deleteBrandArticle" parameterType="com.example.xcschoolserver.pojo.BrandArticle">
+        delete from brand_article where article_id = #{articleId};
+    </delete>
+    <delete id="deleteBrandId" parameterType="com.example.xcschoolserver.pojo.BrandArticle">
+        delete from brand_article where brand_id = #{brandId};
+    </delete>
+
+    <update id="updataArticleClassify" parameterType="com.example.xcschoolserver.pojo.BrandArticle">
+        update brand_article set classify = null where brand_id = #{brandId} and classify = #{classify};
+    </update>
+    <select id="selectBrandArtTime" resultType="com.example.xcschoolserver.pojo.BrandArticle">
+        select publish_time from brand_article;
+    </select>
+    <select id="selectBrandArticleAdmin" resultType="com.example.xcschoolserver.pojo.BrandArticle">
+        select * from brand_article order by article_id desc limit #{pag},10 ;
+    </select>
+
+    <select id="selectBrandArticleAdmins" resultType="com.example.xcschoolserver.pojo.BrandArticle">
+        select * from brand_article where author = #{author} order by article_id desc limit #{pag},10;
+    </select>
+
+    <select id="selectBrandArticl" resultType="com.example.xcschoolserver.pojo.BrandArticle">
+        select * from brand_article;
+    </select>
+
+    <select id="selectArticleTitleAdmin" resultType="com.example.xcschoolserver.pojo.BrandArticle">
+        select * from brand_article where title like #{title} limit #{pag},10;
+    </select>
+
+    <select id="selectArticleTitleAdmins" resultType="com.example.xcschoolserver.pojo.BrandArticle">
+        select article_id from brand_article where title like #{title};
+    </select>
+    <select id="selectSpecialArticle" resultType="com.example.xcschoolserver.pojo.BrandArticle">
+        select article_id,title from brand_article where special = #{special};
+    </select>
+</mapper>

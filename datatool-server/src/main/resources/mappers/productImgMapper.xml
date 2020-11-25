@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.datatoolserver.mapper.productImgMapper">
+    <insert id="insertProductImg" parameterType="com.example.datatoolserver.pojo.ProductImg">
+        insert into product_img (open_id,cover_url,start,product_id) values (#{openId},#{coverUrl},#{start},#{productId});
+    </insert>
+
+    <select id="selectProductImg" resultType="com.example.datatoolserver.pojo.ProductImg">
+        select cover_url from product_img where open_id = #{openId} and product_id = #{productId} limit 1;
+    </select>
+
+    <select id="selectProductImgList" resultType="com.example.datatoolserver.pojo.ProductImg">
+        select cover_url from product_img where open_id = #{openId} and product_id = #{productId};
+    </select>
+
+    <delete id="deleteProductImg" parameterType="com.example.datatoolserver.pojo.ProductImg">
+        delete from product_img where open_id = #{openId} and product_id = #{productId};
+    </delete>
+
+    <delete id="deleteProductImgs" parameterType="com.example.datatoolserver.pojo.ProductImg">
+        delete from product_img where open_id = #{openId} and cover_url = #{coverUrl} and product_id = #{productId};
+    </delete>
+</mapper>

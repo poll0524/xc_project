@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.datatoolserver.mapper.shareArticleMapper">
+    <!--    查询所有-->
+    <select id="selectShareArtList"  resultType="com.example.datatoolserver.pojo.ShareArticle">
+        select * from share_article where open_id = #{openId} and  article_id = #{id};
+    </select>
+
+    <select id="selectShareBraList"  resultType="com.example.datatoolserver.pojo.ShareArticle">
+        select * from share_article where open_id = #{openId} and  brand_article_id = #{id};
+    </select>
+
+    <delete id="deleteShare" parameterType="com.example.datatoolserver.pojo.ShareArticle">
+        delete from share_article where share_id = #{id};
+    </delete>
+
+    <select id="selectShareArtLists"  resultType="com.example.datatoolserver.pojo.ShareArticle">
+        select * from share_article where open_id = #{openId} and share_id = #{shareId};
+    </select>
+
+    <select id="selectShareArtOpenId"  resultType="com.example.datatoolserver.pojo.ShareArticle">
+        select * from share_article where open_id = #{openId};
+    </select>
+
+    <select id="selectShareArtOpenIds"  resultType="com.example.datatoolserver.pojo.ShareArticle">
+        select * from share_article where open_id = #{openId} limit #{pag},20;
+    </select>
+
+    <select id="selectShareArtOpenIdList" resultType="com.example.datatoolserver.pojo.ShareArticle">
+        select share_id,title,cover_img from share_article where open_id = #{openId} limit #{pag},20;
+    </select>
+
+    <select id="selectShareArtGroup" resultType="com.example.datatoolserver.pojo.ShareArticle">
+        select share_id,title,cover_img from share_article where open_id = #{openId};
+    </select>
+
+    <select id="selectShareArtGroupInfo" resultType="com.example.datatoolserver.pojo.ShareArticle">
+        select * from share_article where open_id = #{openId};
+    </select>
+
+    <select id="selectShareArtGroupInfos" resultType="com.example.datatoolserver.pojo.ShareArticle">
+        select * from share_article where open_id in
+        <foreach collection="openId" index="index" item = "item" open="(" separator="," close=")">
+            #{item}
+        </foreach> limit #{pag},5;
+    </select>
+
+    <insert id="insertShareArticle" parameterType="com.example.datatoolserver.pojo.ShareArticle">
+        insert into share_article (open_id,title,thumb_media_id,author,digest,content,url,cover_img, show_cover_pic , article_classify,advertising1,brand_article_id,article_id) values (#{openId},#{title},#{thumbMediaId},#{author},#{digest},#{content},#{url},#{coverImg},#{showCoverPic},#{articleClassify},#{advertising1},#{brandArticleId},#{articleId})
+    </insert>
+    <update id="updataShareArticle" parameterType="com.example.datatoolserver.pojo.ShareArticle">
+        update share_article set title = #{title},thumb_media_id = #{thumbMediaId},author = #{author},digest = #{digest},content = #{content},url = #{url},cover_img = #{coverImg}, show_cover_pic = #{showCoverPic} , article_classify = #{articleClassify},advertising1 = #{advertising1},brand_article_id = #{brandArticleId} where open_id = #{openId} and article_id = #{articleId};
+    </update>
+
+    <update id="updataShareArticleB" parameterType="com.example.datatoolserver.pojo.ShareArticle">
+        update share_article set title = #{title},thumb_media_id = #{thumbMediaId},author = #{author},digest = #{digest},content = #{content},url = #{url},cover_img = #{coverImg}, show_cover_pic = #{showCoverPic} , article_classify = #{articleClassify},advertising1 = #{advertising1},article_id = #{articleId} where open_id = #{openId} and brand_article_id = #{brandArticleId};
+    </update>
+
+    <select id="selectShareArtId" resultType="com.example.datatoolserver.pojo.ShareArticle">
+        select * from share_article where article_id = #{share_id};
+    </select>
+    <select id="selectSharebraId" resultType="com.example.datatoolserver.pojo.ShareArticle">
+        select * from share_article where brand_atricle_id = #{share_id};
+    </select>
+    <select id="selectShareCover" resultType="com.example.datatoolserver.pojo.ShareArticle">
+        select * from share_article where open_id = #{openId} and cover_img = #{coverImg};
+    </select>
+
+    <select id="selectShareVid" resultType="com.example.datatoolserver.pojo.ShareArticle">
+        select * from share_article where article_id = #{articleId} and open_id = #{openId};
+    </select>
+    <select id="selectShareBid" resultType="com.example.datatoolserver.pojo.ShareArticle">
+        select * from share_article where brand_article_id = #{brandArticleId} and open_id = #{openId};
+    </select>
+
+    <select id="selectShareVids" resultType="com.example.datatoolserver.pojo.ShareArticle">
+        select title,cover_img from share_article where article_id = #{articleId} and open_id = #{openId} order by share_id desc;
+    </select>
+    <select id="selectShareBids" resultType="com.example.datatoolserver.pojo.ShareArticle">
+        select title,cover_img from share_article where brand_article_id = #{brandArticleId} and open_id = #{openId};
+    </select>
+
+</mapper>

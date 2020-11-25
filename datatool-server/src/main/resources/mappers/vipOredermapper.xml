@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.datatoolserver.mapper.vipOredermapper">
+    <insert id="insetVipOrder" parameterType="com.example.datatoolserver.pojo.VipOreder">
+        insert into vip_order (open_id,read_open_id,order_number,order_money,brokerage,order_time,pay_type,read_balance) values (#{openId},#{readOpenId},#{orderNumber},#{orderMoney},#{brokerage},#{orderTime},#{payType},#{readBalance});
+    </insert>
+    <select id="selectOpenId" resultType="com.example.datatoolserver.pojo.VipOreder">
+        select * from vip_order where open_id = #{openId} limit 1;
+    </select>
+    <select id="selectReadOpenId" resultType="com.example.datatoolserver.pojo.VipOreder">
+        select * from vip_order where read_open_id = #{readOpenId};
+    </select>
+    <select id="selectOpenIdList" resultType="com.example.datatoolserver.pojo.VipOreder">
+        select * from vip_order where open_id = #{openId};
+    </select>
+    <select id="selectVipOrder" resultType="com.example.datatoolserver.pojo.VipOreder">
+        select * from vip_order;
+    </select>
+</mapper>

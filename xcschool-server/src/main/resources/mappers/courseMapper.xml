@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.xcschoolserver.mapper.courseMapper">
+    <select id="selectRandCourse" resultType="com.example.xcschoolserver.pojo.Course">
+        select course_id,title,cover_img,quantity,classify,price from course order by rand() limit #{pag},10;
+    </select>
+    <select id="selectClassify" resultType="com.example.xcschoolserver.pojo.Course">
+        select course_id,title,cover_img,quantity,classify,price,tell from course where classify = #{classify} order by course_id desc limit #{pag},10;
+    </select>
+    <update id="updataQuantity" parameterType="com.example.xcschoolserver.pojo.Course">
+        update course set quantity = quantity + 1 where course_id = #{courseId};
+    </update>
+    <select id="selectCourseId" resultType="com.example.xcschoolserver.pojo.Course">
+        select * from course where course_id = #{courseId};
+    </select>
+    <select id="selectCourseSum" resultType="com.example.xcschoolserver.pojo.Course">
+        select * from course;
+    </select>
+    <select id="selectTopCourse" resultType="com.example.xcschoolserver.pojo.Course">
+        select * from course where start = 1;
+    </select>
+</mapper>

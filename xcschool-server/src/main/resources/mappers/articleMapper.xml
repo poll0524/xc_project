@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.xcschoolserver.mapper.articleMapper">
+<!--    查询所有-->
+    <select id="selectArticle"  resultType="com.example.xcschoolserver.pojo.Article">
+        select id from billingarticle where show_cover_pic = #{show_cover_pic};
+    </select>
+
+    <select id="selectArticles"  resultType="com.example.xcschoolserver.pojo.Article">
+        select id from billingarticle where show_cover_pic = #{show_cover_pic} and article_classify = #{classifyId};
+    </select>
+<!--    获取文章列表-->
+    <select id="selectTitle" resultType="com.example.xcschoolserver.pojo.Article">
+        select id,title,cover_img,quantity from billingarticle where show_cover_pic = 1 ORDER BY id DESC limit #{bag},10;
+    </select>
+
+    <select id="selectTitleAdmin" resultType="com.example.xcschoolserver.pojo.Article">
+        select id,title,cover_img,article_classify,publish_time from billingarticle where show_cover_pic = #{show_cover_pic} ORDER BY id DESC limit #{bag},10;
+    </select>
+
+    <select id="selectTitleAdmins" resultType="com.example.xcschoolserver.pojo.Article">
+        select id,title,cover_img,article_classify,publish_time from billingarticle where show_cover_pic = #{show_cover_pic} and article_classify = #{classifyId} ORDER BY id DESC limit #{bag},10;
+    </select>
+
+    <select id="selectArticleId" resultType="com.example.xcschoolserver.pojo.Article">
+        select * from billingarticle where id = #{id} ;
+    </select>
+
+
+    <select id="selectMediaIdArticle" resultType="com.example.xcschoolserver.pojo.Article">
+        select * from billingarticle where thumb_media_id = #{thumb_media_id};
+    </select>
+
+    <select id="selectClassify" resultType="com.example.xcschoolserver.pojo.Article">
+        select id,title,cover_img,quantity from billingarticle where article_classify = #{classifyId} and show_cover_pic = 1 ORDER BY id DESC limit #{bag},10;
+    </select>
+
+    <insert id="insertArticle" parameterType="com.example.xcschoolserver.pojo.Article">
+        insert into billingarticle (title , thumb_media_id , author , digest , content , url , show_cover_pic , article_classify,quantity) values (#{title},#{thumb_media_id},#{author},#{digest},#{content},#{url},#{show_cover_pic},#{article_classify},#{quantity})
+    </insert>
+
+    <update id="updataMediaIdImg" parameterType="com.example.xcschoolserver.pojo.Article">
+        update billingarticle set cover_img = #{coverImgUrl} where thumb_media_id = #{mediaId};
+    </update>
+
+    <select id="selectArticleTitle" resultType="com.example.xcschoolserver.pojo.Article">
+        select id,title,cover_img,article_classify from billingarticle where show_cover_pic = 1 and title like #{title} limit #{pag},10;
+    </select>
+
+    <select id="selectArticleTitleAdmin" resultType="com.example.xcschoolserver.pojo.Article">
+        select id,title,cover_img,article_classify,publish_time from billingarticle where show_cover_pic = #{show_cover_pic} and title like #{title} limit #{pag},10;
+    </select>
+
+    <select id="selectArticleTitleAdmins" resultType="com.example.xcschoolserver.pojo.Article">
+        select id from billingarticle where show_cover_pic = #{show_cover_pic} and title like #{title};
+    </select>
+    
+<!--    随机查询6条文章-->
+    <select id="selectRaArticle" resultType="com.example.xcschoolserver.pojo.Article">
+        SELECT id,title FROM billingarticle ORDER BY RAND() LIMIT 3;
+    </select>
+    <select id="selectClaRaArticle" resultType="com.example.xcschoolserver.pojo.Article">
+        SELECT id,title FROM billingarticle where article_classify = #{articleClassify} ORDER BY RAND() LIMIT 3;
+    </select>
+
+    <select id="selectSpecialArticle" resultType="com.example.xcschoolserver.pojo.Article">
+        select id,title,url,cover_img,quantity,content_img from billingarticle where special = #{special} limit #{bag},20;
+    </select>
+
+    <update id="updataQuantity" parameterType="com.example.xcschoolserver.pojo.Article">
+        update billingarticle set quantity = quantity+1 where id = #{id};
+    </update>
+
+
+    <insert id="insertArticleAdmin" parameterType="com.example.xcschoolserver.pojo.Article">
+        insert into billingarticle (title , thumb_media_id , author , digest , content , url , cover_img , show_cover_pic , article_classify,quantity,publish_time) values (#{title},#{thumb_media_id},#{author},#{digest},#{content},#{url}, #{coverImg} ,#{show_cover_pic},#{article_classify},#{quantity},#{time})
+    </insert>
+
+    <update id="updataShowCoverPic" parameterType="com.example.xcschoolserver.pojo.Article">
+        update billingarticle set show_cover_pic = #{show_cover_pic} where id = #{id};
+    </update>
+
+    <delete id="deleteArticle" parameterType="com.example.xcschoolserver.pojo.Article">
+        delete from billingarticle where id = #{id};
+    </delete>
+
+    <update id="updataArticleAdmin" parameterType="com.example.xcschoolserver.pojo.Article">
+        update billingarticle set title = #{title} , author = #{author} , digest = #{digest} , content = #{content}  , cover_img = #{coverImg} , show_cover_pic = #{show_cover_pic} , article_classify = #{article_classify} ,quantity = #{quantity} ,publish_time = #{time} where id = #{id};
+    </update>
+
+    <select id="selectArticleTime" resultType="com.example.xcschoolserver.pojo.Article">
+        select publish_time from billingarticle;
+    </select>
+
+</mapper>

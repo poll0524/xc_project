@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.datatoolserver.mapper.userClassifyMapper">
+    <!--    查询所有-->
+    <select id="selectUserClassify"  resultType="com.example.datatoolserver.pojo.UserClassify">
+        select * from user_classify where open_id = #{openId};
+    </select>
+
+    <delete id="deleteUserClassify" parameterType="com.example.datatoolserver.pojo.UserClassify">
+        delete from user_classify where open_id = #{openId};
+    </delete>
+
+    <insert id="insertUserClassify" parameterType="com.example.datatoolserver.pojo.UserClassify">
+        insert into user_classify (open_id,classify_id) values (#{openId},#{classifyId});
+    </insert>
+
+</mapper>

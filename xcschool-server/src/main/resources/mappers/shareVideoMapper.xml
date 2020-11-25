@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.xcschoolserver.mapper.shareVideoMapper">
+    <!--    查询所有-->
+    <select id="selectShareVideo"  resultType="com.example.xcschoolserver.pojo.ShareVideo">
+        select * from share_video where share_video_id = #{videoId} and open_id = #{openId};
+    </select>
+    <select id="selectShareVid" resultType="com.example.xcschoolserver.pojo.ShareVideo">
+        select * from share_video where video_id = #{videoId} and open_id = #{openId};
+    </select>
+    <select id="selectShareBid" resultType="com.example.xcschoolserver.pojo.ShareVideo">
+        select * from share_video where brand_video_id = #{videoId} and open_id = #{openId};
+    </select>
+
+    <select id="selectShareVids" resultType="com.example.xcschoolserver.pojo.ShareVideo">
+        select video_name,cover_url from share_video where video_id = #{videoId} and open_id = #{openId};
+    </select>
+    <select id="selectShareBids" resultType="com.example.xcschoolserver.pojo.ShareVideo">
+        select video_name,cover_url from share_video where brand_video_id = #{videoId} and open_id = #{openId};
+    </select>
+
+    <update id="updataShareVid" parameterType="com.example.xcschoolserver.pojo.ShareVideo">
+        update share_video set video_name = #{videoName},cover_url = #{coverUrl},down_url = #{downUrl},video_classify = #{videoClassify},brand_video_id = #{brandVideoId},advertising1 = #{advertising1},quantity = #{quantity},digest = #{digest},video_like = #{videoLike},author = #{author},pop_img = #{popImg},pop_code=#{popCode} where open_id = #{openId} and video_id = #{videoId};
+    </update>
+
+    <update id="updataShareBid" parameterType="com.example.xcschoolserver.pojo.ShareVideo">
+        update share_video set video_id = #{videoId},video_name = #{videoName},cover_url = #{coverUrl},down_url = #{downUrl},video_classify = #{videoClassify},advertising1 = #{advertising1},quantity = #{quantity},digest = #{digest},video_like = #{videoLike},author = #{author},pop_img = #{popImg},pop_code=#{popCode} where open_id = #{openId} and brand_video_id = #{brandVideoId};
+    </update>
+
+    <select id="selectShareVideoId" resultType="com.example.xcschoolserver.pojo.ShareVideo">
+        select * from share_video where share_video_id = #{videoId};
+    </select>
+
+    <select id="selectShareVideoOpenIdList" resultType="com.example.xcschoolserver.pojo.ShareVideo">
+        select share_video_id,video_name,cover_url from share_video where open_id = #{openId} limit #{pag},20;
+    </select>
+    <select id="selectShareVideoGroup" resultType="com.example.xcschoolserver.pojo.ShareVideo">
+        select open_id,share_video_id,video_name,cover_url from share_video where open_id = #{openId};
+    </select>
+
+    <select id="selectShareVideoGroups" resultType="com.example.xcschoolserver.pojo.ShareVideo">
+        select open_id,share_video_id,video_name,cover_url from share_video where open_id in
+        <foreach collection="openId" index="index" item = "item" open="(" separator="," close=")">
+        #{item}
+        </foreach> limit #{pag},5;
+    </select>
+
+    <select id="selectShareVideoOpenId"  resultType="com.example.xcschoolserver.pojo.ShareVideo">
+        select * from share_video where open_id = #{openId};
+    </select>
+
+<!--    写入一条分享过修改的视频-->
+    <insert id="insertShareVideo" parameterType="com.example.xcschoolserver.pojo.ShareVideo">
+        insert into share_video (open_id,video_id,video_name,cover_url,down_url,video_classify,brand_video_id,advertising1,quantity,digest,video_like,author,pop_img,pop_code) values (#{openId},#{videoId},#{videoName},#{coverUrl},#{downUrl},#{videoClassify},#{brandVideoId},#{advertising1},#{quantity},#{digest},#{videoLike},#{author},#{popImg},#{popCode});
+    </insert>
+
+    <update id="updataShareVideo" parameterType="com.example.xcschoolserver.pojo.ShareVideo">
+        update share_video set video_name = #{videoName} where video_id = #{videoId} and open_id = #{openId};
+    </update>
+
+    <update id="updataLike" parameterType="com.example.xcschoolserver.pojo.Video">
+        update share_video set video_like = video_like+1 where video_id = #{videoId} and open_id = #{openId};
+    </update>
+
+    <update id="updataLikeNo" parameterType="com.example.xcschoolserver.pojo.Video">
+        update share_video set video_like = video_like-1 where video_id = #{videoId} and open_id = #{openId};
+    </update>
+
+    <update id="updataLikeB" parameterType="com.example.xcschoolserver.pojo.Video">
+        update share_video set video_like = video_like+1 where brand_video_id = #{brandVideoId} and open_id = #{openId};
+    </update>
+
+    <update id="updataLikeNoB" parameterType="com.example.xcschoolserver.pojo.Video">
+        update share_video set video_like = video_like-1 where brand_video_id = #{brandVideoId} and open_id = #{openId};
+    </update>
+
+</mapper>

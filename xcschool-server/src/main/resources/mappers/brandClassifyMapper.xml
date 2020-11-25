@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.xcschoolserver.mapper.brandClassifyMapper">
+    <insert id="insertBrandClassify" parameterType="com.example.xcschoolserver.pojo.BrandClassify">
+        insert into brand_classify (open_id,brand_classify_name,brand_id,billing_classify) values (#{openId},#{brandClassifyName},#{brandId},#{billingClassify});
+    </insert>
+
+    <delete id="deleteBrandClassify" parameterType="com.example.xcschoolserver.pojo.BrandClassify">
+        delete from brand_classify where brand_id = #{brandId};
+    </delete>
+
+    <select id="selectBrandClassify" resultType="com.example.xcschoolserver.pojo.BrandClassify">
+        select * from brand_classify where brand_id = #{brandId};
+    </select>
+
+    <select id="selectBrandName" resultType="com.example.xcschoolserver.pojo.BrandClassify">
+        select * from brand_classify where brand_id = #{brandId} and brand_classify_name = #{brandClassifyName};
+    </select>
+
+    <delete id="deleteBrandName" parameterType="com.example.xcschoolserver.pojo.BrandClassify">
+        delete from brand_classify where brand_id = #{brandId} and brand_classify_name = #{brandClassifyName};
+    </delete>
+</mapper>

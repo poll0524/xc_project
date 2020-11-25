@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.xcschoolserver.mapper.groupTopMapper">
+    <!--根据group_member_openid查询-->
+    <select id="selectGroup"  resultType="com.example.xcschoolserver.pojo.GroupTop">
+        select * from group_top where group_member_openid = #{openId};
+    </select>
+
+    <select id="selectGroupId"  resultType="com.example.xcschoolserver.pojo.GroupTop">
+        select * from group_top where group_id= #{groupId};
+    </select>
+
+    <select id="selectGroupToken"  resultType="com.example.xcschoolserver.pojo.GroupTop">
+        select * from group_top where group_token = #{groupToken};
+    </select>
+    <select id="selectGroupTokenId"  resultType="com.example.xcschoolserver.pojo.GroupTop">
+        select * from group_top where group_token = #{groupToken} and open_id = #{openId} and group_member_openid = #{groupMemberOpenid}
+    </select>
+    <select id="selectGroupName"  resultType="com.example.xcschoolserver.pojo.GroupTop">
+        select * from group_top where open_id = #{openId} and group_name = #{groupName};
+    </select>
+
+    <select id="selectGroupTokenList" resultType="com.example.xcschoolserver.pojo.GroupTop">
+        select group_token from group_top where group_member_openid = #{openId};
+    </select>
+
+
+
+    <update id="updataGroupShow" parameterType="com.example.xcschoolserver.pojo.GroupTop">
+        update group_top set group_show = #{show} where group_id = #{groupId};
+    </update>
+    <update id="updataOpenIdShow" parameterType="com.example.xcschoolserver.pojo.GroupTop">
+        update group_top set group_show = #{show} where group_member_openid = #{groupMemberOpenid};
+    </update>
+
+    <update id="updataOneShow" parameterType="com.example.xcschoolserver.pojo.GroupTop">
+        update group_top set group_show = #{show} where group_member_openid = #{groupMemberOpenid} limit 1;
+    </update>
+
+    <update id="updataGroupStart" parameterType="com.example.xcschoolserver.pojo.GroupTop">
+        update group_top set group_start = #{start} where group_id = #{groupId};
+    </update>
+    <delete id="deleteGroup" parameterType="com.example.xcschoolserver.pojo.GroupTop">
+        delete from group_top where group_id = #{groupId};
+    </delete>
+<!--    根据openId更新-->
+    <update id="updataGroup" parameterType="com.example.xcschoolserver.pojo.GroupTop">
+        update group_top set group_name = #{groupName} where group_token = #{groupToken};
+    </update>
+<!--    写入一条团队-->
+    <insert id="insertGroup" parameterType="com.example.xcschoolserver.pojo.GroupTop">
+        insert into group_top (group_token , open_id , group_name , group_member_openid , group_start , group_show) values (#{groupToken},#{openId},#{groupName},#{groupMemberOpenid},#{groupStart},#{groupShow});
+    </insert>
+</mapper>

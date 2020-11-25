@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.xcschoolserver.mapper.pushMapper">
+    <select id="selectPush" resultType="com.example.xcschoolserver.pojo.Push">
+        select * from push where open_id = #{openId};
+    </select>
+    <select id="selectPushAll" resultType="com.example.xcschoolserver.pojo.Push">
+        select * from push;
+    </select>
+    
+    <insert id="insertPush" parameterType="com.example.xcschoolserver.pojo.Push">
+        insert into push(push_matinal,push_morning,push_nooning,push_afternoon,push_evening,push_night,open_id) values (#{pushMatinal},#{pushMorning},#{pushNooning},#{pushAfternoon},#{pushEvening},#{pushNight},#{openId})
+    </insert>
+
+    <update id="updataPush" parameterType="com.example.xcschoolserver.pojo.Push">
+        update push set push_matinal = #{pushMatinal},push_morning = #{pushMorning},push_nooning = #{pushNooning},push_afternoon = #{pushAfternoon},push_evening = #{pushEvening},push_night = #{pushNight} where open_id = #{openId};
+    </update>
+</mapper>
