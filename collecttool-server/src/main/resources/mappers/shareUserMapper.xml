@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.collecttoolserver.mapper.shareUserMapper">
+    <insert id="insertShareUser" parameterType="com.example.collecttoolserver.pojo.ShareUser">
+        insert into share_user (share_open_id,read_open_id,content_id,read_time,start,tell,title) values (#{shareOpenId},#{readOpenId},#{contentId},#{readTime},#{start},#{tell},#{title});
+    </insert>
+
+    <select id="selectShareUser" resultType="com.example.collecttoolserver.pojo.ShareUser">
+        select * from share_user where share_open_id = #{openId} and start = #{start} order by share_id desc limit #{pag},10;
+    </select>
+
+    <select id="selectShareUserData" resultType="com.example.collecttoolserver.pojo.ShareUser">
+        select * from share_user where  share_open_id = #{shareOpenId} and read_open_id = #{readOpenId} and start = #{start} and content_id = #{contentId};
+    </select>
+
+    <update id="updataShareUserData" parameterType="com.example.collecttoolserver.pojo.ShareUser">
+        update share_user set read_time = #{readTime} where share_open_id = #{shareOpenId} and read_open_id = #{readOpenId} and start = #{start} and content_id = #{contentId};
+    </update>
+
+    <update id="updataShareUsersData" parameterType="com.example.collecttoolserver.pojo.ShareUser">
+        update share_user set read_time = #{readTime},tell = #{tell} where share_open_id = #{shareOpenId} and read_open_id = #{readOpenId} and start = #{start} and content_id = #{contentId};
+    </update>
+</mapper>

@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
     name: xcbilling
-    url: jdbc:mysql://localhost:3306/xcbilling?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://localhost:3306/collecttool?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=false
     #    url: jdbc:mysql://localhost:3306/xcbilling?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=TRUE
     username: root
     password: root

@@ -22,8 +22,8 @@ public class LoginController {
     }
 
     @ResponseBody
-    @PostMapping("/userInfo")
-    public ReturnVO<Map<String,Object>> userInfo(@RequestBody Map<String,Object> data) throws Exception {
-        return new ReturnVO(loginService.userInfo(data));
+    @PostMapping("/userLogin")
+    public ReturnVO<Map<String,Object>> userLogin(@RequestBody Map<String,Object> data) throws Exception {
+        return new ReturnVO(loginService.userLogin(data));
     }
 }

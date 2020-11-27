@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="datatool-server" />
         <module name="xcschool-server" />
+        <module name="eureka" />
         <module name="geteway" />
         <module name="collecttool-server" />
-        <module name="eureka" />
+        <module name="datatool-server" />
       </profile>
     </annotationProcessing>
   </component>

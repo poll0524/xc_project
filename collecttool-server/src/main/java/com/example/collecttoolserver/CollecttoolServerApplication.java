@@ -7,6 +7,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @EnableDiscoveryClient
+@EnableScheduling
 public class CollecttoolServerApplication {
 
     public static void main(String[] args) {

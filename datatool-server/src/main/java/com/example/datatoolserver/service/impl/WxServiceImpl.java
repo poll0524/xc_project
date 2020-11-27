@@ -45,8 +45,8 @@ public class WxServiceImpl implements IWxService {
 
     public static final String SPBILL_CREATE_IP = "127.0.0.1";
     //开通会员回调地址
-//    public static final String NOTIFY_URL = "http://poll.mynatapp.cc/order/notify";
-    public static final String NOTIFY_URL = "http://xiaocisw.site/order/notify";
+//    public static final String NOTIFY_URL = "http://poll.mynatapp.cc/datatool/order/notify";
+    public static final String NOTIFY_URL = "http://xiaocisw.site/datatool/order/notify";
 
 
     public static final String TRADE_TYPE_APP = "JSAPI";
@@ -95,6 +95,7 @@ public class WxServiceImpl implements IWxService {
                 String total_fee = notifyMap.get("total_fee");
 //                String total_fee = "299900";
 //                System.out.println(total_fee);
+//                System.out.println("回调成功");
                 if (return_code.equals("SUCCESS")) {
                     if (out_trade_no != null) {
                         // 注意特殊情况：订单已经退款，但收到了支付结果成功的通知，不应把商户的订单状态从退款改成支付成功

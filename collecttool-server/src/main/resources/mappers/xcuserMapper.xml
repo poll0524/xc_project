@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.collecttoolserver.mapper.xcuserMapper">
+    <select id="selectOpenId" resultType="com.example.collecttoolserver.pojo.Xcuser">
+        select * from xcuser where open_id = #{openId};
+    </select>
+    <update id="updataOpenId" parameterType="com.example.collecttoolserver.pojo.Xcuser">
+        update xcuser set user_name = #{userName},user_phone = #{userPhone},user_sex = #{userSex},user_province = #{userProvince},user_city = #{userCity},user_country = #{userCountry},user_headimgurl = #{userHeadimgurl} where open_id = #{openId};
+    </update>
+    <insert id="insertUserInfo" parameterType="com.example.collecttoolserver.pojo.Xcuser">
+        insert into xcuser (open_id , user_name , user_phone , user_sex , user_province , user_city , user_country , user_headimgurl) values (#{openId},#{userName},#{userPhone},#{userSex},#{userProvince},#{userCity},#{userCountry},#{userHeadimgurl});
+    </insert>
+    <update id="updataVip" parameterType="com.example.collecttoolserver.pojo.Xcuser">
+        update xcuser set start = #{start},begin_time = #{beginTime},end_time = #{endTime} where open_id = #{openId};
+    </update>
+    <update id="updataVipGo" parameterType="com.example.collecttoolserver.pojo.Xcuser">
+        update xcuser set start = #{start},end_time = #{endTime} where open_id = #{openId};
+    </update>
+
+    <select id="selectXcuser" resultType="com.example.collecttoolserver.pojo.Xcuser">
+        select * from xcuser;
+    </select>
+</mapper>

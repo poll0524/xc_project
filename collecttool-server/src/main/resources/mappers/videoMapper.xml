@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.collecttoolserver.mapper.videoMapper">
+    <insert id="insertVideo" useGeneratedKeys="true" keyProperty="article_id" parameterType="com.example.collecttoolserver.pojo.Video">
+        insert into xc_video (open_id,title,digest,cover_img,author,collect_time,down_url,pop_img,pop_code,original_url,video_like,read_quantity,phone) values (#{openId},#{title},#{digest},#{coverImg},#{author},#{collectTime},#{downUrl},#{popImg},#{popCode},#{originalUrl},#{videoLike},#{readQuantity},#{phone});
+    </insert>
+    <select id="selectVideoId" resultType="com.example.collecttoolserver.pojo.Video">
+        select * from xc_video where video_id = #{videoId};
+    </select>
+</mapper>
