@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.collecttoolserver.mapper.shineUponMapper">
+    <select id="selectTowOpenId" resultType="com.example.collecttoolserver.pojo.ShineUpon">
+        select * from shine_upon where two_open_id = #{twoOpenId};
+    </select>
+    <insert id="insertShineUpon" parameterType="com.example.collecttoolserver.pojo.ShineUpon">
+        insert into shine_upon (one_open_id,two_open_id) values (#{oneOpenId},#{twoOpenId});
+    </insert>
+
+    <select id="selectOneOpenId" resultType="com.example.collecttoolserver.pojo.ShineUpon">
+        select * from shine_upon where one_open_id = #{oneOpenId};
+    </select>
+
+    <select id="selectOneOpenIds" resultType="com.example.collecttoolserver.pojo.ShineUpon">
+        select * from shine_upon where one_open_id = #{oneOpenId} order by shine_id desc limit #{pag},10;
+    </select>
+
+    <select id="selectOneTowOpenId" resultType="com.example.collecttoolserver.pojo.ShineUpon">
+        select * from shine_upon where one_open_id = #{twoOpenId} and two_open_id = #{twoOpenId};
+    </select>
+</mapper>

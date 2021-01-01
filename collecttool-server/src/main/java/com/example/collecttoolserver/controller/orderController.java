@@ -2,10 +2,7 @@ package com.example.collecttoolserver.controller;
 
 import com.example.collecttoolserver.common.ReturnVO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import com.example.collecttoolserver.service.IOrderService;
 
 import javax.servlet.http.HttpServletRequest;
@@ -64,4 +61,26 @@ public class orderController {
             return result;
         }
     }
+
+    /**
+     * 发起提现
+     */
+    @ResponseBody
+    @PostMapping("/outMoney")
+    public ReturnVO<String> outMoney(@RequestBody Map<String,Object> data) throws Exception {
+        String a = orderService.outMoney(data);
+        return new ReturnVO(a);
+    }
+
+    /**
+     * 余额查询
+     */
+    @ResponseBody
+    @PostMapping("/selectBalance")
+    public ReturnVO<Double> selectBalance(@RequestBody Map<String,Object> data){
+        return new ReturnVO(orderService.selectBalance(data));
+    }
+
+
+
 }

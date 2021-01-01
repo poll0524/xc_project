@@ -4,10 +4,13 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.collecttoolserver.mapper.articleMapper">
-    <insert id="insertArticle" useGeneratedKeys="true" keyProperty="article_id" parameterType="com.example.collecttoolserver.pojo.Article">
-        insert into xc_article (open_id,title,digest,cover_img,original_url,author,collect_time,pop_code,pop_img,read_quantity,phone) values (#{openId},#{title},#{digest},#{coverImg},#{originalUrl},#{author},#{collectTime},#{popCode},#{popImg},#{readQuantity},#{phone})
+    <insert id="insertArticle" parameterType="com.example.collecttoolserver.pojo.Article">
+        insert into xc_article (open_id,title,digest,cover_img,original_url,author,collect_time,pop_code,pop_img,read_quantity,phone,token) values (#{openId},#{title},#{digest},#{coverImg},#{originalUrl},#{author},#{collectTime},#{popCode},#{popImg},#{readQuantity},#{phone},#{token})
     </insert>
     <select id="selectArticleId" resultType="com.example.collecttoolserver.pojo.Article">
-        select * from xc_article where article_id = #{articleId}
+        select * from xc_article where article_id = #{articleId};
+    </select>
+    <select id="selectArticleToken" resultType="com.example.collecttoolserver.pojo.Article">
+        select * from xc_article where token = #{token};
     </select>
 </mapper>

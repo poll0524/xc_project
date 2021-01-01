@@ -21,6 +21,14 @@ public class AccessTokenUtil {
     private accessTokenMapper accessTokenMapper;
 
 
+    /**
+     * 获取uniontid
+     */
+    public String getUniontId() throws JSONException {
+        String result = HttpUtil.get(WeChatUtil.get_UNIONTID.replace("ACCESS_TOKEN",getAccessToken()).replace("OPENID","oo7wnwmC9G08xDWe458oh5dmkN3s"));
+        System.out.println(result);
+        return result;
+    }
 
     /**
      * 获取基本的access_token
@@ -41,9 +49,9 @@ public class AccessTokenUtil {
             //发起get请求获取access_token
             System.out.println(WeChatUtil.APPID);
             //本地
-            String result = HttpUtil.get(WeChatUtil.GET_ACCESSTOKEN_URL.replace("APPID","wx8ee656699cb2c84d").replace("APPSECRET","c82093ea8fdffd9178cee6152c40cf90"));
+//            String result = HttpUtil.get(WeChatUtil.GET_ACCESSTOKEN_URL.replace("APPID","wx8ee656699cb2c84d").replace("APPSECRET","c82093ea8fdffd9178cee6152c40cf90"));
             //线上
-//            String result = HttpUtil.get(WeChatUtil.GET_ACCESSTOKEN_URL.replace("APPID","wx03cab7644b8bddb8").replace("APPSECRET","803dd8cc93a68f1c0db2e8121534003e"));
+            String result = HttpUtil.get(WeChatUtil.GET_ACCESSTOKEN_URL.replace("APPID","wx03cab7644b8bddb8").replace("APPSECRET","803dd8cc93a68f1c0db2e8121534003e"));
             JSONObject jsonObject = new JSONObject(new String(result));
 
             //得到access_token
@@ -62,9 +70,9 @@ public class AccessTokenUtil {
             System.out.println(WeChatUtil.APPID);
             //发起get请求获取access_token
             //本地
-            String result = HttpUtil.get(WeChatUtil.GET_ACCESSTOKEN_URL.replace("APPID","wx8ee656699cb2c84d").replace("APPSECRET","c82093ea8fdffd9178cee6152c40cf90"));
+//            String result = HttpUtil.get(WeChatUtil.GET_ACCESSTOKEN_URL.replace("APPID","wx8ee656699cb2c84d").replace("APPSECRET","c82093ea8fdffd9178cee6152c40cf90"));
             //线上
-//            String result = HttpUtil.get(WeChatUtil.GET_ACCESSTOKEN_URL.replace("APPID","wx03cab7644b8bddb8").replace("APPSECRET","803dd8cc93a68f1c0db2e8121534003e"));
+            String result = HttpUtil.get(WeChatUtil.GET_ACCESSTOKEN_URL.replace("APPID","wx03cab7644b8bddb8").replace("APPSECRET","803dd8cc93a68f1c0db2e8121534003e"));
 
             //string转json对象
             JSONObject jsonObject = new JSONObject(new String(result));
@@ -125,9 +133,9 @@ public class AccessTokenUtil {
 
                 //发起get请求获取webaccess_token
                 //本地
-                String result = HttpUtil.get(WeChatUtil.GET_REFRESH_TOKEN.replace("APPID","wx8ee656699cb2c84d").replace("REFRESH_TOKEN",accessTokenMapper.selectNameAccessToken(WeChatUtil.REFRESHTOKEN).getToken_info()));
+//                String result = HttpUtil.get(WeChatUtil.GET_REFRESH_TOKEN.replace("APPID","wx8ee656699cb2c84d").replace("REFRESH_TOKEN",accessTokenMapper.selectNameAccessToken(WeChatUtil.REFRESHTOKEN).getToken_info()));
                 //线上
-//                String result = HttpUtil.get(WeChatUtil.GET_REFRESH_TOKEN.replace("APPID","wx03cab7644b8bddb8").replace("REFRESH_TOKEN",accessTokenMapper.selectNameAccessToken(WeChatUtil.REFRESHTOKEN).getToken_info()));
+                String result = HttpUtil.get(WeChatUtil.GET_REFRESH_TOKEN.replace("APPID","wx03cab7644b8bddb8").replace("REFRESH_TOKEN",accessTokenMapper.selectNameAccessToken(WeChatUtil.REFRESHTOKEN).getToken_info()));
 
                 //result转json类型
                 JSONObject jsonObject = new JSONObject(new String(result));
@@ -155,9 +163,9 @@ public class AccessTokenUtil {
             }else if (time > expires || time <expires){
                 //发起get请求获取webaccess_token
                 //本地
-                String result = HttpUtil.get(WeChatUtil.GET_REFRESH_TOKEN.replace("APPID","wx8ee656699cb2c84d").replace("REFRESH_TOKEN",accessTokenMapper.selectNameAccessToken(WeChatUtil.REFRESHTOKEN).getToken_info()));
+//                String result = HttpUtil.get(WeChatUtil.GET_REFRESH_TOKEN.replace("APPID","wx8ee656699cb2c84d").replace("REFRESH_TOKEN",accessTokenMapper.selectNameAccessToken(WeChatUtil.REFRESHTOKEN).getToken_info()));
                 //线上
-//                String result = HttpUtil.get(WeChatUtil.GET_REFRESH_TOKEN.replace("APPID","wx03cab7644b8bddb8").replace("REFRESH_TOKEN",accessTokenMapper.selectNameAccessToken(WeChatUtil.REFRESHTOKEN).getToken_info()));
+                String result = HttpUtil.get(WeChatUtil.GET_REFRESH_TOKEN.replace("APPID","wx03cab7644b8bddb8").replace("REFRESH_TOKEN",accessTokenMapper.selectNameAccessToken(WeChatUtil.REFRESHTOKEN).getToken_info()));
 
                 //result转json类型
                 JSONObject jsonObject = new JSONObject(new String(result));
@@ -193,9 +201,9 @@ public class AccessTokenUtil {
     public Map<String,Object> getWebaccessTokens(String code) throws JSONException {
         //发起get请求获取webaccess_token
         //本地
-        String result = HttpUtil.get(WeChatUtil.GET_WEBACCESSTOKEN_URL.replace("APPID","wx8ee656699cb2c84d").replace("SECRET","c82093ea8fdffd9178cee6152c40cf90").replace("CODE",code));
+//        String result = HttpUtil.get(WeChatUtil.GET_WEBACCESSTOKEN_URL.replace("APPID","wx8ee656699cb2c84d").replace("SECRET","c82093ea8fdffd9178cee6152c40cf90").replace("CODE",code));
         //线上
-//        String result = HttpUtil.get(WeChatUtil.GET_WEBACCESSTOKEN_URL.replace("APPID","wx03cab7644b8bddb8").replace("SECRET","803dd8cc93a68f1c0db2e8121534003e").replace("CODE",code));
+        String result = HttpUtil.get(WeChatUtil.GET_WEBACCESSTOKEN_URL.replace("APPID","wx03cab7644b8bddb8").replace("SECRET","803dd8cc93a68f1c0db2e8121534003e").replace("CODE",code));
 
         //result转json类型
         JSONObject jsonObject = new JSONObject(new String(result));

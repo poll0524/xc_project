@@ -4,10 +4,31 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.collecttoolserver.mapper.videoMapper">
-    <insert id="insertVideo" useGeneratedKeys="true" keyProperty="article_id" parameterType="com.example.collecttoolserver.pojo.Video">
-        insert into xc_video (open_id,title,digest,cover_img,author,collect_time,down_url,pop_img,pop_code,original_url,video_like,read_quantity,phone) values (#{openId},#{title},#{digest},#{coverImg},#{author},#{collectTime},#{downUrl},#{popImg},#{popCode},#{originalUrl},#{videoLike},#{readQuantity},#{phone});
+    <insert id="insertVideo" parameterType="com.example.collecttoolserver.pojo.Video">
+        insert into xc_video (open_id,title,digest,cover_img,author,collect_time,down_url,pop_img,pop_code,original_url,video_like,read_quantity,phone,token,industry_name) values (#{openId},#{title},#{digest},#{coverImg},#{author},#{collectTime},#{downUrl},#{popImg},#{popCode},#{originalUrl},#{videoLike},#{readQuantity},#{phone},#{token},#{industryName});
     </insert>
+
     <select id="selectVideoId" resultType="com.example.collecttoolserver.pojo.Video">
         select * from xc_video where video_id = #{videoId};
     </select>
+
+    <select id="selectVideoToken" resultType="com.example.collecttoolserver.pojo.Video">
+        select * from xc_video where token = #{token};
+    </select>
+    <update id="updataDownUrl" parameterType="com.example.collecttoolserver.pojo.Video">
+        update xc_video set down_url = #{downUrl} where video_id = #{videoId};
+    </update>
+
+    <select id="selectContentOpenId" resultType="com.example.collecttoolserver.pojo.Video">
+        select * from xc_video where open_id = #{openId} ORDER BY video_id DESC limit #{pag},10;
+    </select>
+    <delete id="deleteVideo" parameterType="com.example.collecttoolserver.pojo.Video">
+        delete from xc_video where video_id = #{videoId};
+    </delete>
+    <update id="updataVideoId" parameterType="com.example.collecttoolserver.pojo.Video">
+        update xc_video set  title = #{title},digest = #{digest},cover_img = #{coverImg},down_url=#{downUrl},pop_img=#{popImg},phone = #{phone},industry_name = #{industryName} where video_id = #{videoId};
+    </update>
+    <update id="updataPopCode" parameterType="com.example.collecttoolserver.pojo.Video">
+        update xc_video set pop_code = #{popCode} where video_id = #{videoId};
+    </update>
 </mapper>

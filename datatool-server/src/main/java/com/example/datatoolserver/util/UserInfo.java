@@ -21,7 +21,41 @@ public class UserInfo {
     @Autowired
     private brandNavMapper brandNavMapper;
     /**
-     * 写入用户信息
+     * 写入用户信息/1推5版本
+     */
+//    public Xcuser insertUser(JSONObject userInfo) throws JSONException {
+//        //获取用户基本信息
+//        String openId = userInfo.getString("openid");
+//        String userName =  userInfo.getString("nickname");
+//        String userSex = userInfo.getString("sex");
+//        String userProvince = userInfo.getString("province");
+//        String userCity = userInfo.getString("city");
+//        String userCountry = userInfo.getString("country");
+//        String userHeadimgurl = userInfo.getString("headimgurl");
+//        Integer sign = 0;
+//        //将用户信息写入数据库
+//        xcuserMapper.insertUser(openId,userName,userSex,userProvince,userCity,userCountry,userHeadimgurl,sign,0,0.00,0);
+//        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+//        String time = df.format(new Date());// new Date()为获取当前系统时间
+//
+//        //结束时间
+//        Calendar calendar2 = Calendar.getInstance();
+//        SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//        calendar2.add(Calendar.DATE, 15);
+//        String endTime = sdf2.format(calendar2.getTime());
+//        xcuserMapper.updataUserStarts(openId,1,time,endTime);
+//        //查询该用户是否存在默认品牌
+//        BrandNav brandNav = brandNavMapper.selectBrandName(openId, WeChatUtil.AUTHOR);
+//        //如果没有默认品牌则创建默认品牌
+//        if (brandNav == null){
+//            brandNavMapper.insertBrand(openId, WeChatUtil.AUTHOR,1);
+//        }
+//        //返回该用户信息
+//        return xcuserMapper.selectOpenId(openId);
+//    }
+
+    /**
+     * 写入用户信息/1元7天体验版本
      */
     public Xcuser insertUser(JSONObject userInfo) throws JSONException {
         //获取用户基本信息
@@ -35,15 +69,6 @@ public class UserInfo {
         Integer sign = 0;
         //将用户信息写入数据库
         xcuserMapper.insertUser(openId,userName,userSex,userProvince,userCity,userCountry,userHeadimgurl,sign,0,0.00,0);
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
-        String time = df.format(new Date());// new Date()为获取当前系统时间
-
-        //结束时间
-        Calendar calendar2 = Calendar.getInstance();
-        SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        calendar2.add(Calendar.DATE, 15);
-        String endTime = sdf2.format(calendar2.getTime());
-        xcuserMapper.updataUserStarts(openId,1,time,endTime);
         //查询该用户是否存在默认品牌
         BrandNav brandNav = brandNavMapper.selectBrandName(openId, WeChatUtil.AUTHOR);
         //如果没有默认品牌则创建默认品牌

@@ -54,8 +54,8 @@ public class articleController {
         l_data.put("noncestr",noncestr);
         l_data.put("signature",signature);
         l_data.put("url",url);
-//        l_data.put("appid", WeChatUtil.APPID);
-        l_data.put("appid","wx8ee656699cb2c84d");
+        l_data.put("appid", WeChatUtil.APPID);
+//        l_data.put("appid","wx8ee656699cb2c84d");
 
 
         return new ReturnVO(l_data);

@@ -33,7 +33,7 @@ public class Xcuser {
     //vip结束时间
     private String end_time;
 
-    //vip订单
-    private String vip_order_id;
+    //余额
+    private Double balance;
 
 }

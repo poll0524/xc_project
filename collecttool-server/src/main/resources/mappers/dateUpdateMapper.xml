@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.collecttoolserver.mapper.dateUpdateMapper">
+    <select id="selectDateUpdate" resultType="com.example.collecttoolserver.pojo.DateUpdate">
+        select * from date_update where open_id = #{openId};
+    </select>
+    <insert id="insertDateUpdate" parameterType="com.example.collecttoolserver.pojo.DateUpdate">
+        insert into date_update (open_id,date_quantity) values (#{openId},#{dateQuantity})
+    </insert>
+    <update id="updateDateUpdate" parameterType="com.example.collecttoolserver.pojo.DateUpdate">
+        update date_update set date_quantity = #{dateQuantity} where open_id = #{openId};
+    </update>
+</mapper>

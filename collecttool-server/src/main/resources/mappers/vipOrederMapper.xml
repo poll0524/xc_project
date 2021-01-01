@@ -5,6 +5,13 @@
 
 <mapper namespace="com.example.collecttoolserver.mapper.vipOrederMapper">
     <insert id="insertOrder" parameterType="com.example.collecttoolserver.pojo.VipOreder">
-        insert into vip_order (open_id,order_number,order_money,order_time,pay_type) values (#{openId},#{orderNumber},#{orderMoney},#{orderTime},#{payType});
+        insert into vip_order (open_id,order_number,order_money,order_time,pay_type,brokerage_open_id,brokerage) values (#{openId},#{orderNumber},#{orderMoney},#{orderTime},#{payType},#{brokerageOpenId},#{brokerage});
     </insert>
+    <select id="selectVipOrder" resultType="com.example.collecttoolserver.pojo.VipOreder">
+        select * from vip_order where brokerage_open_id = #{brokerageOpenid} and open_id = #{openId};
+    </select>
+
+    <select id="selectReadOpenId" resultType="com.example.collecttoolserver.pojo.VipOreder">
+        select * from vip_order where brokerage_open_id = #{brokerageOpenid};
+    </select>
 </mapper>

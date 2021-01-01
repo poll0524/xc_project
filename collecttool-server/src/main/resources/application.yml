@@ -3,9 +3,9 @@ server:
 
 spring:
   datasource:
-    name: xcbilling
+    name: collecttool
     url: jdbc:mysql://localhost:3306/collecttool?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=false
-    #    url: jdbc:mysql://localhost:3306/xcbilling?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=TRUE
+#    url: jdbc:mysql://47.108.112.28:3306/collecttool?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=false
     username: root
     password: root
     driver-class-name: com.mysql.jdbc.Driver

@@ -3,6 +3,7 @@ package com.example.datatoolserver.controller;
 import com.example.datatoolserver.common.ReturnVO;
 import com.example.datatoolserver.pojo.Xcuser;
 import com.example.datatoolserver.service.IXcuserService;
+import com.example.datatoolserver.util.AccessTokenUtil;
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +16,8 @@ import java.util.Map;
 public class xcuserController {
     @Autowired
     private IXcuserService xcuserService;
+    @Autowired
+    private AccessTokenUtil accessTokenUtil;
 
 
 
@@ -123,4 +126,9 @@ public class xcuserController {
         return new ReturnVO(xcuserService.message(data));
     }
 
+    @PostMapping("/uniontId")
+    @ResponseBody
+    public ReturnVO<String> uniontId() throws JSONException {
+        return new ReturnVO(accessTokenUtil.getUniontId());
+    }
 }

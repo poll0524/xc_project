@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.collecttoolserver.mapper.cashMapper">
+    <insert id="insertCash" parameterType="com.example.collecttoolserver.pojo.Cash">
+        insert into cash (order_id,open_id,cash_name,cash_money,cash_time) values (#{orderId},#{openId},#{cashName},#{cashMoney},#{cashTime})
+    </insert>
+    <select id="selectCash" resultType="com.example.collecttoolserver.pojo.Cash">
+        select * from cash where open_id = #{openId} order by cash_id desc limit #{pag},10;
+    </select>
+</mapper>

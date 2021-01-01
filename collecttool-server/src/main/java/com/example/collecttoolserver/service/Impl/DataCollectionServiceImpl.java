@@ -26,6 +26,9 @@ public class DataCollectionServiceImpl implements IDataCollectionService {
                 //调用方法获取文章
                 Map<String,Object> datas = ArticleCollectUtil.getArticle(spiderUrl);
                 return datas;
+            }else if (spiderUrl.indexOf("http://mp.weixin.qq.com") != -1){
+                Map<String,Object> datas = ArticleCollectUtil.getArticle(spiderUrl);
+                return datas;
             }
             return null;
         }else if (start == 1){

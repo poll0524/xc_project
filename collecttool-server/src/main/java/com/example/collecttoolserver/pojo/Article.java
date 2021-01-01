@@ -29,5 +29,6 @@ public class Article {
     //文章阅读量
     private Integer read_quantity;
     private String phone;
+    private String token;
 
 }

@@ -2,17 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42479366-21d2-46d4-a31d-b6e7ec3e1957" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/CollecttoolServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/CollecttoolServerApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/common/WeChatUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/common/WeChatUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/controller/ContentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/controller/ContentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/controller/DataCollectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/controller/DataCollectionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/controller/orderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/controller/orderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/controller/shareController.java" beforeDir="false" afterPath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/controller/shareController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/mapper/articleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/mapper/articleMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/mapper/shareUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/mapper/shareUserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/mapper/videoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/mapper/videoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/mapper/vipOrederMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/mapper/vipOrederMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/mapper/xcuserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/mapper/xcuserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/pojo/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/pojo/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/pojo/Video.java" beforeDir="false" afterPath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/pojo/Video.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/pojo/VipOreder.java" beforeDir="false" afterPath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/pojo/VipOreder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/pojo/Xcuser.java" beforeDir="false" afterPath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/pojo/Xcuser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/service/IContentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/service/IContentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/service/IDataCollectionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/service/IDataCollectionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/service/ILoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/service/ILoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/service/IOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/service/IOrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/service/IShareService.java" beforeDir="false" afterPath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/service/IShareService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/service/Impl/ContentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/service/Impl/ContentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/service/Impl/DataCollectionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/service/Impl/DataCollectionServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/service/Impl/LoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/service/Impl/LoginServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/service/Impl/OrederServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/service/Impl/OrederServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/service/Impl/ShareServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/service/Impl/ShareServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/util/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/util/FileUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/util/MD5Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/util/MD5Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/util/WXConfigUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/util/WXConfigUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/util/WeChatFinalUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/collecttool-server/src/main/java/com/example/collecttoolserver/util/WeChatFinalUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collecttool-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/collecttool-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datatool-server/src/main/java/com/example/datatoolserver/service/impl/WxServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/datatool-server/src/main/java/com/example/datatoolserver/service/impl/WxServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geteway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/geteway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collecttool-server/src/main/resources/mappers/articleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/collecttool-server/src/main/resources/mappers/articleMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collecttool-server/src/main/resources/mappers/shareUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/collecttool-server/src/main/resources/mappers/shareUserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collecttool-server/src/main/resources/mappers/videoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/collecttool-server/src/main/resources/mappers/videoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collecttool-server/src/main/resources/mappers/vipOrederMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/collecttool-server/src/main/resources/mappers/vipOrederMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collecttool-server/src/main/resources/mappers/xcuserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/collecttool-server/src/main/resources/mappers/xcuserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datatool-server/src/main/java/com/example/datatoolserver/common/WeChatUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/datatool-server/src/main/java/com/example/datatoolserver/common/WeChatUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datatool-server/src/main/java/com/example/datatoolserver/controller/WeixinInterfaceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/datatool-server/src/main/java/com/example/datatoolserver/controller/WeixinInterfaceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datatool-server/src/main/java/com/example/datatoolserver/controller/articleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/datatool-server/src/main/java/com/example/datatoolserver/controller/articleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datatool-server/src/main/java/com/example/datatoolserver/controller/xcuserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/datatool-server/src/main/java/com/example/datatoolserver/controller/xcuserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datatool-server/src/main/java/com/example/datatoolserver/task/ArticleTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/datatool-server/src/main/java/com/example/datatoolserver/task/ArticleTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datatool-server/src/main/java/com/example/datatoolserver/util/AccessTokenUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/datatool-server/src/main/java/com/example/datatoolserver/util/AccessTokenUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datatool-server/src/main/java/com/example/datatoolserver/util/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/datatool-server/src/main/java/com/example/datatoolserver/util/UserInfo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,14 +91,17 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/collecttool-server/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.collecttoolserver.util" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.collecttoolserver.common" />
       <recent name="com.example.collecttoolserver.pojo" />
       <recent name="com.example.collecttoolserver.util" />
-      <recent name="com.example.collecttoolserver.common" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\pollproject\xcbusiness-server\collecttool-server\src" />
@@ -76,8 +112,60 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.CollecttoolServerApplication">
-    <configuration name="FileUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.collecttoolserver.util.FileUtil" />
+    <configuration name="HierarchyUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.collecttoolserver.util.HierarchyUtil" />
+      <module name="collecttool-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.collecttoolserver.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MD5Util" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.collecttoolserver.util.MD5Util" />
+      <module name="collecttool-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.collecttoolserver.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrederServiceImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.collecttoolserver.service.Impl.OrederServiceImpl" />
+      <module name="collecttool-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.collecttoolserver.service.Impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UrlAgingUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.collecttoolserver.util.UrlAgingUtil" />
+      <module name="collecttool-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.collecttoolserver.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WxQrCodeUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.collecttoolserver.util.WxQrCodeUtil" />
       <module name="collecttool-server" />
       <extension name="coverage">
         <pattern>
@@ -126,7 +214,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.FileUtil" />
+        <item itemvalue="Application.OrederServiceImpl" />
+        <item itemvalue="Application.WxQrCodeUtil" />
+        <item itemvalue="Application.MD5Util" />
+        <item itemvalue="Application.HierarchyUtil" />
+        <item itemvalue="Application.UrlAgingUtil" />
       </list>
     </recent_temporary>
   </component>
@@ -155,7 +247,36 @@
       <workItem from="1606285695468" duration="20765000" />
       <workItem from="1606353774817" duration="38029000" />
       <workItem from="1606396366859" duration="28000" />
-      <workItem from="1606440889045" duration="5439000" />
+      <workItem from="1606440889045" duration="23676000" />
+      <workItem from="1606539218140" duration="12381000" />
+      <workItem from="1606629734186" duration="6956000" />
+      <workItem from="1606698563555" duration="12802000" />
+      <workItem from="1606785112290" duration="12931000" />
+      <workItem from="1606872085615" duration="7647000" />
+      <workItem from="1606890503002" duration="1253000" />
+      <workItem from="1606894140551" duration="7602000" />
+      <workItem from="1606957194585" duration="1441000" />
+      <workItem from="1606965738666" duration="9487000" />
+      <workItem from="1607044024788" duration="16935000" />
+      <workItem from="1607302971990" duration="19736000" />
+      <workItem from="1607389699984" duration="8459000" />
+      <workItem from="1607484140976" duration="8525000" />
+      <workItem from="1607563828596" duration="19062000" />
+      <workItem from="1607648464697" duration="20007000" />
+      <workItem from="1607907524871" duration="25091000" />
+      <workItem from="1607993742897" duration="18930000" />
+      <workItem from="1608081743348" duration="13820000" />
+      <workItem from="1608170075731" duration="15599000" />
+      <workItem from="1608255444276" duration="14188000" />
+      <workItem from="1608512483468" duration="22434000" />
+      <workItem from="1608685334169" duration="10062000" />
+      <workItem from="1608771562299" duration="8868000" />
+      <workItem from="1608866257410" duration="5588000" />
+      <workItem from="1608877592508" duration="9164000" />
+      <workItem from="1609117302955" duration="8069000" />
+      <workItem from="1609204003577" duration="5705000" />
+      <workItem from="1609331165804" duration="138000" />
+      <workItem from="1609487914947" duration="1140000" />
     </task>
     <servers />
   </component>
@@ -167,92 +288,118 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#Inspections/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606287177936" />
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606305249451">
+    <state x="149" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606483717620">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606305249451" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1606285734702">
+    <state x="149" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606483717620" />
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1607571026173">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606285734702" />
-    <state width="1877" height="325" key="GridCell.Tab.0.bottom" timestamp="1606446337603">
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607571026173" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1609331256388">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="261" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1606292610808" />
-    <state width="1877" height="325" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606446337603" />
-    <state width="1877" height="325" key="GridCell.Tab.0.center" timestamp="1606446337603">
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1609331256388" />
+    <state width="1877" height="261" key="GridCell.Tab.0.bottom" timestamp="1609220083135">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="261" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1609220083135" />
+    <state width="1877" height="130" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1609214386927" />
+    <state width="1877" height="301" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607680846091" />
+    <state width="1877" height="261" key="GridCell.Tab.0.center" timestamp="1609220083134">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="261" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1609220083134" />
+    <state width="1877" height="130" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1609214386927" />
+    <state width="1877" height="301" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607680846091" />
+    <state width="1877" height="261" key="GridCell.Tab.0.left" timestamp="1609220083133">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="261" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1609220083133" />
+    <state width="1877" height="130" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1609214386927" />
+    <state width="1877" height="301" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607680846091" />
+    <state width="1877" height="261" key="GridCell.Tab.0.right" timestamp="1609220083135">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="261" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1609220083135" />
+    <state width="1877" height="130" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1609214386927" />
+    <state width="1877" height="301" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607680846091" />
+    <state width="1877" height="130" key="GridCell.Tab.1.bottom" timestamp="1609214386928">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="261" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1606292610808" />
-    <state width="1877" height="325" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606446337603" />
-    <state width="1877" height="325" key="GridCell.Tab.0.left" timestamp="1606446337603">
+    <state width="1877" height="256" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1608717567450" />
+    <state width="1877" height="130" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1609214386928" />
+    <state width="1877" height="301" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607680846091" />
+    <state width="1877" height="130" key="GridCell.Tab.1.center" timestamp="1609214386928">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="261" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1606292610808" />
-    <state width="1877" height="325" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606446337603" />
-    <state width="1877" height="325" key="GridCell.Tab.0.right" timestamp="1606446337603">
+    <state width="1877" height="256" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1608717567449" />
+    <state width="1877" height="130" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1609214386928" />
+    <state width="1877" height="301" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607680846091" />
+    <state width="1877" height="130" key="GridCell.Tab.1.left" timestamp="1609214386927">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="261" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1606292610808" />
-    <state width="1877" height="325" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606446337603" />
-    <state width="1877" height="325" key="GridCell.Tab.1.bottom" timestamp="1606446337453">
+    <state width="1877" height="256" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1608717567449" />
+    <state width="1877" height="130" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1609214386927" />
+    <state width="1877" height="301" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607680846091" />
+    <state width="1877" height="130" key="GridCell.Tab.1.right" timestamp="1609214386928">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="325" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606446337453" />
-    <state width="1877" height="325" key="GridCell.Tab.1.center" timestamp="1606446337453">
+    <state width="1877" height="256" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1608717567449" />
+    <state width="1877" height="130" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1609214386928" />
+    <state width="1877" height="301" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607680846091" />
+    <state width="1877" height="130" key="GridCell.Tab.2.bottom" timestamp="1609214386928">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="325" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606446337453" />
-    <state width="1877" height="325" key="GridCell.Tab.1.left" timestamp="1606446337453">
+    <state width="1877" height="256" key="GridCell.Tab.2.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1608717567450" />
+    <state width="1877" height="130" key="GridCell.Tab.2.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1609214386928" />
+    <state width="1877" height="301" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607680846092" />
+    <state width="1877" height="130" key="GridCell.Tab.2.center" timestamp="1609214386928">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="325" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606446337453" />
-    <state width="1877" height="325" key="GridCell.Tab.1.right" timestamp="1606446337453">
+    <state width="1877" height="256" key="GridCell.Tab.2.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1608717567450" />
+    <state width="1877" height="130" key="GridCell.Tab.2.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1609214386928" />
+    <state width="1877" height="301" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607680846092" />
+    <state width="1877" height="130" key="GridCell.Tab.2.left" timestamp="1609214386928">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="325" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606446337453" />
-    <state width="1877" height="325" key="GridCell.Tab.2.bottom" timestamp="1606446337454">
+    <state width="1877" height="256" key="GridCell.Tab.2.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1608717567450" />
+    <state width="1877" height="130" key="GridCell.Tab.2.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1609214386928" />
+    <state width="1877" height="301" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607680846091" />
+    <state width="1877" height="130" key="GridCell.Tab.2.right" timestamp="1609214386928">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="325" key="GridCell.Tab.2.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606446337454" />
-    <state width="1877" height="325" key="GridCell.Tab.2.center" timestamp="1606446337453">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="325" key="GridCell.Tab.2.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606446337453" />
-    <state width="1877" height="325" key="GridCell.Tab.2.left" timestamp="1606446337453">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="325" key="GridCell.Tab.2.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606446337453" />
-    <state width="1877" height="325" key="GridCell.Tab.2.right" timestamp="1606446337453">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="325" key="GridCell.Tab.2.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606446337453" />
+    <state width="1877" height="256" key="GridCell.Tab.2.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1608717567450" />
+    <state width="1877" height="130" key="GridCell.Tab.2.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1609214386928" />
+    <state width="1877" height="301" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607680846092" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1606285741640">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606285741640" />
-    <state x="616" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1606440905346">
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1607421502618">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606440905346" />
-    <state x="-1530" y="0" width="1508" height="663" maximized="true" key="dock-window-1" timestamp="1606445390960">
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607421502618" />
+    <state x="616" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1609331182232">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1304" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1608771592394" />
+    <state x="616" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1609331182232" />
+    <state x="-1751" y="5" width="1443" height="679" maximized="true" key="dock-window-1" timestamp="1607925391659">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1530" y="0" width="1508" height="663" maximized="true" key="dock-window-1/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606445390960" />
-    <state x="334" y="126" key="new project wizard" timestamp="1606287083057">
+    <state x="-1751" y="5" width="1443" height="679" maximized="true" key="dock-window-1/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607925391659" />
+    <state x="-8" y="-8" width="1508" height="655" maximized="true" key="dock-window-2" timestamp="1606480706197">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="334" y="126" key="new project wizard/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606287083057" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/datatool-server/src/main/java/com/example/datatoolserver/task/VipInfo.java</url>
-          <line>162</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="-8" y="-8" width="1508" height="655" maximized="true" key="dock-window-2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606480706197" />
+    <state x="626" y="237" width="667" height="566" key="find.popup" timestamp="1606787274260">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="626" y="237" width="667" height="566" key="find.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606787274260" />
+    <state x="334" y="126" key="new project wizard" timestamp="1609331301992">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="334" y="126" key="new project wizard/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1609331301992" />
   </component>
 </project>

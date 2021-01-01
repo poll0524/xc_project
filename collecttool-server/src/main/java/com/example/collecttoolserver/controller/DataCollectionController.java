@@ -1,6 +1,7 @@
 package com.example.collecttoolserver.controller;
 
 import com.example.collecttoolserver.common.ReturnVO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.example.collecttoolserver.service.IDataCollectionService;
 
@@ -9,6 +10,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/dataCollection")
 public class DataCollectionController {
+    @Autowired
     private IDataCollectionService dataCollectionService;
     /**
      * 通过链接爬取数据

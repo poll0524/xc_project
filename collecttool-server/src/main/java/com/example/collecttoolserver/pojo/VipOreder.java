@@ -16,11 +16,17 @@ public class VipOreder {
     //订单编号
     private String order_number;
     //订单金额
-    private Double order_money;
+    private String order_money;
 
     //订单时间
     private String order_time;
     //支付类型
     private String pay_type;
+
+    //抽佣人
+    private String brokerage_open_id;
+
+    //佣金
+    private Double brokerage;
 
 }

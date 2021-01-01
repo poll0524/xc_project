@@ -20,6 +20,7 @@ public class WXConfigUtil implements WXPayConfig {
 
     public WXConfigUtil() throws Exception {
         String certPath = WeChatUtil.CERT_PATH;//从微信商户平台下载的安全证书存放的路径
+//        String certPath = "E:/pollproject/xcbusiness-server/collecttool-server/target/classes/weixin/apiclient_cert.p12";
         File file = new File(certPath);
         InputStream certStream = new FileInputStream(file);
         this.certData = new byte[(int) file.length()];

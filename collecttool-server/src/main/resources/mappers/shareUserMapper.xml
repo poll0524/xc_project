@@ -12,15 +12,39 @@
         select * from share_user where share_open_id = #{openId} and start = #{start} order by share_id desc limit #{pag},10;
     </select>
 
+    <select id="selectShareUsers" resultType="com.example.collecttoolserver.pojo.ShareUser">
+        select * from share_user where share_open_id = #{openId} and start = #{start} and read_time like #{time} order by share_id desc limit #{pag},10;
+    </select>
+
+    <select id="selectShareUserss" resultType="com.example.collecttoolserver.pojo.ShareUser">
+        select * from share_user where share_open_id = #{openId} and start = #{start} and read_time not like #{time} and read_time not like #{endTime} order by share_id desc limit #{pag},10;
+    </select>
+
+    <select id="selectShareUserSum" resultType="com.example.collecttoolserver.pojo.ShareUser">
+        select * from share_user where share_open_id = #{openId};
+    </select>
+
     <select id="selectShareUserData" resultType="com.example.collecttoolserver.pojo.ShareUser">
         select * from share_user where  share_open_id = #{shareOpenId} and read_open_id = #{readOpenId} and start = #{start} and content_id = #{contentId};
     </select>
 
     <update id="updataShareUserData" parameterType="com.example.collecttoolserver.pojo.ShareUser">
-        update share_user set read_time = #{readTime} where share_open_id = #{shareOpenId} and read_open_id = #{readOpenId} and start = #{start} and content_id = #{contentId};
+        update share_user set read_time = #{readTime},title = #{title} where share_id = #{shareId};
     </update>
 
     <update id="updataShareUsersData" parameterType="com.example.collecttoolserver.pojo.ShareUser">
-        update share_user set read_time = #{readTime},tell = #{tell} where share_open_id = #{shareOpenId} and read_open_id = #{readOpenId} and start = #{start} and content_id = #{contentId};
+        update share_user set read_time = #{readTime},tell = #{tell},title = #{title} where share_id = #{shareId};
+    </update>
+
+    <update id="updataSharePhone" parameterType="com.example.collecttoolserver.pojo.ShareUser">
+        update share_user set tell = #{tell} where share_id = #{shareId};
+    </update>
+
+    <select id="selectShareId" resultType="com.example.collecttoolserver.pojo.ShareUser">
+        select * from share_user where share_id = #{shareId};
+    </select>
+
+    <update id="updataShareTime" parameterType="com.example.collecttoolserver.pojo.ShareUser">
+        update share_user set read_time = #{readTime} where share_open_id = #{shareOpenId} and read_open_id = #{readOpenId} and start = #{start} and content_id = #{contentId};
     </update>
 </mapper>

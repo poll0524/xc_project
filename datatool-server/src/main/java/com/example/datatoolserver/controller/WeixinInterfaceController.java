@@ -129,22 +129,22 @@ public class WeixinInterfaceController extends HttpServlet {
         System.out.println(urls);
 
         String urlstr = URLEncoder.encode(urls,"utf-8");
-//        String url ="https://open.weixin.qq.com/connect/oauth2/authorize?appid="+WeChatUtil.APPID
-//                //这个backUrl的域名必须要进行再公众号中进行注册验证，这个地址是成功后的回调地址,在配置文件配置
-//                + "&redirect_uri="+urlstr
-//                + "&response_type=code"
-//                + "&scope=snsapi_userinfo"
-//                + "&connect_redirect=1"
-//                + "#wechat_redirect";
-
-        //线下
-        String url ="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx8ee656699cb2c84d"
+        String url ="https://open.weixin.qq.com/connect/oauth2/authorize?appid="+WeChatUtil.APPID
                 //这个backUrl的域名必须要进行再公众号中进行注册验证，这个地址是成功后的回调地址,在配置文件配置
                 + "&redirect_uri="+urlstr
                 + "&response_type=code"
                 + "&scope=snsapi_userinfo"
                 + "&connect_redirect=1"
                 + "#wechat_redirect";
+
+        //线下
+//        String url ="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx8ee656699cb2c84d"
+//                //这个backUrl的域名必须要进行再公众号中进行注册验证，这个地址是成功后的回调地址,在配置文件配置
+//                + "&redirect_uri="+urlstr
+//                + "&response_type=code"
+//                + "&scope=snsapi_userinfo"
+//                + "&connect_redirect=1"
+//                + "#wechat_redirect";
 
 //        String[] a = urls.split("/");
 //        String b = "http://joycai.mynatapp.cc/"+a[3];

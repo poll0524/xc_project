@@ -74,7 +74,7 @@ public class ArticleTask {
                     "\n" +
                     "\uD83D\uDC49<a href='http://web.xiaocisw.site/customer'>点击查看昨日意向客户</a>\n" +
                     "\n" +
-                    "<a href='http://web.xiaocisw.site/punchCard'>设置的打卡时间已到，快去领取今天的每日一句吧！~</a>"+
+//                    "<a href='http://web.xiaocisw.site/punchCard'>设置的打卡时间已到，快去领取今天的每日一句吧！~</a>"+
                     "\n"+
                     searchService.pushParticularly(xcuser.getOpen_id())+"\n"+
                     "\n"+
@@ -309,8 +309,6 @@ public class ArticleTask {
                 String username = user.getUser_name();
                 String str = "\uD83D\uDD58亲爱的"+username+"辛苦一天啦\n" +
                         "记得早点休息哦✨\n" +
-                        "\n"+
-                        "\uD83C\uDF1B<a href='http://web.xiaocisw.site/punchCard'>今日晚安语录，点击我分享</a>\n"+
                         "\n"+
                         "\uD83C\uDF81<a href='http://web.xiaocisw.site/seniorMember'>营销利器，自己开通了受益了，然后顺带帮助更多人，快速成功和拥有财富</a>\uD83C\uDF89\n"+
                         "\n"+

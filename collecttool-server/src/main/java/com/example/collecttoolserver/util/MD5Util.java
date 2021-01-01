@@ -73,5 +73,8 @@ public class MD5Util {
         int d2 = n % 16;
         return hexDigits[d1] + hexDigits[d2];
     }
+
+
+
 }
 

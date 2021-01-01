@@ -13,12 +13,12 @@ public class WeChatUtil {
 
 
     //测试号
-    public static final String APPID = "wx8ee656699cb2c84d";
-    public static final String APPSECRET = "c82093ea8fdffd9178cee6152c40cf90";
+//    public static final String APPID = "wx8ee656699cb2c84d";
+//    public static final String APPSECRET = "c82093ea8fdffd9178cee6152c40cf90";
 
     //正式号
-//    public static final String APPID = "wx03cab7644b8bddb8";
-//    public static final String APPSECRET = "803dd8cc93a68f1c0db2e8121534003e";
+    public static final String APPID = "wx03cab7644b8bddb8";
+    public static final String APPSECRET = "803dd8cc93a68f1c0db2e8121534003e";
 
     //创建菜单请求地址
     public static final String CREATE_MENU_URL = " https://api.weixin.qq.com/cgi-bin/menu/create?access_token=ACCESS_TOKEN";
@@ -77,6 +77,9 @@ public class WeChatUtil {
     //调用抖音下载api接口
     public static final String DOUYIN = "https://api-sv.videoparse.cn/api/video/normalParse";
 
+    //获取unionid
+    public static final String get_UNIONTID = "https://api.weixin.qq.com/cgi-bin/user/info?access_token=ACCESS_TOKEN&openid=OPENID&lang=zh_CN";
+
     //基本access_token调用接口凭证
     public static final String ACCESSTOKEN = "AccessToken";
     //网页access_token调用接口凭证
@@ -97,10 +100,4 @@ public class WeChatUtil {
     public static final String KEYID = "LTAI4GJcedWzZ1XuCijsFhkL";
     public static final String KEYSECRET = "7XdOEyTjpMOpA58uOaGWQ55zIpuTCZ";
     public static final String BUCKETNAME = "xiaocisw-video";
-
-
-
-
-
-
 }

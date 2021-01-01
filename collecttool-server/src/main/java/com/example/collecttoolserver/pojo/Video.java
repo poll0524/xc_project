@@ -25,7 +25,7 @@ public class Video {
     //广告图片
     private String pop_img;
     //二维码图片
-    private Integer pop_code;
+    private String pop_code;
     //原始视频地址
     private String original_url;
     //视频点赞量
@@ -33,4 +33,7 @@ public class Video {
     //视频观看量
     private Integer read_quantity;
     private String phone;
+    private String token;
+
+    private String industry_name;
 }
